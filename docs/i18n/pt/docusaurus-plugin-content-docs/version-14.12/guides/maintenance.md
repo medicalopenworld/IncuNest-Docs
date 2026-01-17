@@ -147,7 +147,7 @@ Se o equipamento possuir filtros de ar:
 1. **Verifique a conexão de aterramento**
 2. **Meça a resistência de isolamento**
 3. **Teste de corrente de fuga:**
-- Deve ser <0,5mA
+- Deve ser menor que 0,5mA
 4. **Inspecione os fusíveis**
 5. **Verifique o status da fonte de alimentação**
 

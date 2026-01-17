@@ -105,7 +105,7 @@ pio run --target upload
 |------------------|-----------|-------|
 | 0.9.x | ✅ Sim | Atualização direta |
 | 0,5.x | ⚠️ Parcial | Requer nova calibração |
-| <0,5 | ❌ Não | Regravar do zero |
+| Anterior a 0.5 | ❌ Não | Regravar do zero |
 
 ---
 

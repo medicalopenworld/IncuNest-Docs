@@ -24,6 +24,7 @@
         "/^cd /workspaces/IncuNest-Docs/docs && python - <<'PY'\nimport argostranslate\\.package, os, urllib\\.request, json\n# Download package index\nindex_url = 'https://www\\.argosopentech\\.com/argospm/index/'\nindex = json\\.load\\(urllib\\.request\\.urlopen\\(index_url\\)\\)\n# Filter es->en, es->pt, es->fr\npairs = \\[\\('es','en'\\),\\('es','pt'\\),\\('es','fr'\\)\\]\npackages = \\{\\}\nfor p in index:\n    if p\\['from_code'\\] == 'es' and p\\['to_code'\\] in \\['en','pt','fr'\\]:\n        packages\\[\\(p\\['from_code'\\], p\\['to_code'\\]\\)\\] = p\n\nprint\\('Found:', packages\\.keys\\(\\)\\)\n# download and install\nfor \\(f,t\\), p in packages\\.items\\(\\):\n    url = p\\['links'\\]\\[0\\]\n    fname = f\"/tmp/argos-\\{f\\}-\\{t\\}\\.argosmodel\"\n    print\\('Downloading', url\\)\n    urllib\\.request\\.urlretrieve\\(url, fname\\)\n    argostranslate\\.package\\.install_from_path\\(fname\\)\n    print\\('Installed', f, t\\)\nPY$/": {
             "approve": true,
             "matchCommandLine": true
-        }
+        },
+        "git push": true
     }
 }
