@@ -12,6 +12,15 @@ keywords: [mantenimiento, limpieza, servicio]
 
 Proper maintenance is essential for the safe and reliable operation of IncuNest.
 
+<video
+  controls
+  preload="metadata"
+  style={{width: '100%', maxWidth: 800}}
+  src="/videos/en/maintenance.mp4"
+>
+  Your browser does not support video playback.
+</video>
+
 ### Recommended Frequency
 
 | Task | Frequency | Responsible |

@@ -9,9 +9,18 @@ keywords: [mantenimiento, limpieza, servicio]
 
 Entretien
 
-Programme d'entretien
+## Programme d'entretien
 
 Un entretien adéquat est essentiel pour le fonctionnement sûr et fiable d'IncuNest.
+
+<video
+  controls
+  preload="metadata"
+  style={{width: '100%', maxWidth: 800}}
+  src="/videos/fr/maintenance.mp4"
+>
+  Votre navigateur ne prend pas en charge la lecture vidéo.
+</video>
 
 Fréquence recommandée
 
