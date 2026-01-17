@@ -27,7 +27,7 @@ Ce guide vous guidera dans les étapes nécessaires pour configurer et mettre en
   </p>
 </div>
 
-Exigences antérieures
+Exigences préalables
 
 Matériel nécessaire
 
