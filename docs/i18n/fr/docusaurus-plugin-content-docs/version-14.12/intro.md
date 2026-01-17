@@ -26,12 +26,12 @@ keywords: [incubateur, néonatal, open source, ESP32]
     controls
     preload="metadata"
     width="100%"
-    src="/videos/fr/user-interface.mp4"
+    src="/IncuNest-Docs/videos/fr/user-interface.mp4"
   >
     Votre navigateur ne prend pas en charge la balise vidéo.
   </video>
   <p>
-    <a href="/videos/fr/user-interface.mp4" target="_blank" rel="noopener noreferrer">
+    <a href="/IncuNest-Docs/videos/fr/user-interface.mp4" target="_blank" rel="noopener noreferrer">
       Regarder en plein écran
     </a>
   </p>

@@ -17,7 +17,7 @@ Un entretien adéquat est essentiel pour le fonctionnement sûr et fiable d'Incu
   controls
   preload="metadata"
   style={{width: '100%', maxWidth: 800}}
-  src="/videos/fr/maintenance.mp4"
+  src="/IncuNest-Docs/videos/fr/maintenance.mp4"
 >
   Votre navigateur ne prend pas en charge la lecture vidéo.
 </video>
