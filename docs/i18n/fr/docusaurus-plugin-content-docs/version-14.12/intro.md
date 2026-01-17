@@ -1,21 +1,21 @@
 ---
 id: intro
 title: Introduction à l'IncuNest
-sidebar_label: Présentation
+sidebar_label: Introduction
 sidebar_position: 1
 slug: /intro
-description: IncuNest est un incubateur néonatal ouvert conçu pour des environnements à ressources limitées
-keywords: [incubadora, neonatal, open source, código abierto, ESP32]
+description: IncuNest est un incubateur néonatal open source conçu pour les environnements à ressources limitées
+keywords: [incubateur, néonatal, open source, ESP32]
 ---
 
 # Introduction à l'IncuNest
 
-< div class = "Héro--primaire" >
-< div classe = "conteneur" >
-< h1 classe
-< p class = "Hero _ _ sous-titre" > Code ouvert Incubateur néonatal < / p >
-< / div >
-< / div >
+<div className="hero hero--primary">
+  <div className="container">
+    <h1 className="hero__title">🏥 IncuNest</h1>
+    <p className="hero__subtitle">Incubateur néonatal open source</p>
+  </div>
+</div>
 
 ## Qu'est-ce qu'IncuNest?
 
@@ -41,9 +41,9 @@ keywords: [incubadora, neonatal, open source, código abierto, ESP32]
 Réduire la mortalité néonatale en fournissant une technologie médicale de qualité aux communautés qui en ont le plus besoin.
 :::
 
-Caractéristiques principales
+## Caractéristiques principales
 
-Contrôle de température
+### Contrôle de la température
 - Contrôle précis de la température par PID
 - Plage de fonctionnement: 25 °C - 37 °C
 − Précision: ± 0,1 °C

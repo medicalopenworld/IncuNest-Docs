@@ -1,10 +1,10 @@
 ---
 id: getting-started
-title: Guía de Inicio Rápido
-sidebar_label: Inicio Rápido
+title: Quick Start Guide
+sidebar_label: Quick Start
 sidebar_position: 2
-description: Guía completa para comenzar con IncuNest
-keywords: [inicio, instalación, configuración, ESP32]
+description: Complete guide to get started with IncuNest
+keywords: [getting started, installation, configuration, ESP32]
 ---
 # Quick Start Guide
 

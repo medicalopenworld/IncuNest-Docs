@@ -1,0 +1,230 @@
+{
+  "navbar.documentation": {
+    "message": "Documentation"
+  },
+  "navbar.hardware": {
+    "message": "Matériel"
+  },
+  "navbar.software": {
+    "message": "Logiciel"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "homepage.subtitle": {
+    "message": "Incubateur néonatal open source"
+  },
+  "homepage.cta": {
+    "message": "Introduction"
+  },
+  "homepage.meta.title": {
+    "message": "Accueil - IncuNest"
+  },
+  "homepage.meta.description": {
+    "message": "Documentation et ressources du projet IncuNest"
+  },
+  "home.feature.open.title": {
+    "message": "Conception open source"
+  },
+  "home.feature.open.desc": {
+    "message": "Le matériel et le logiciel d'IncuNest sont ouverts, documentés et reproductibles afin que toute communauté puisse construire et améliorer l'incubateur."
+  },
+  "home.feature.collaboration.title": {
+    "message": "Collaboration clinique et maker"
+  },
+  "home.feature.collaboration.desc": {
+    "message": "Des équipes médicales, des ingénieurs et des makers unissent leur expertise pour valider les exigences néonatales, la sécurité et la maintenance sur le terrain."
+  },
+  "home.feature.safety.title": {
+    "message": "Priorité à la sécurité néonatale"
+  },
+  "home.feature.safety.desc": {
+    "message": "Les protocoles de contrôle thermique, les alarmes et les redondances sont documentés pour prioriser la sécurité du nouveau-né dans les environnements à ressources limitées."
+  },
+  "sidebar.docs.intro": {
+    "message": "Introduction"
+  },
+  "sidebar.docs.gettingStarted": {
+    "message": "Démarrage rapide"
+  },
+  "sidebar.docs.safetyNotice": {
+    "message": "Avis de sécurité"
+  },
+  "sidebar.docs.architecture": {
+    "message": "Architecture"
+  },
+  "sidebar.docs.architecture.overview": {
+    "message": "Vue d'ensemble"
+  },
+  "sidebar.docs.architecture.systemDesign": {
+    "message": "Conception du système"
+  },
+  "sidebar.docs.architecture.communication": {
+    "message": "Communication et protocoles"
+  },
+  "sidebar.docs.guides": {
+    "message": "Guides"
+  },
+  "sidebar.docs.guides.installation": {
+    "message": "Installation"
+  },
+  "sidebar.docs.guides.configuration": {
+    "message": "Configuration"
+  },
+  "sidebar.docs.guides.calibration": {
+    "message": "Étalonnage"
+  },
+  "sidebar.docs.guides.maintenance": {
+    "message": "Maintenance"
+  },
+  "sidebar.docs.guides.troubleshooting": {
+    "message": "Dépannage"
+  },
+  "sidebar.docs.contributing": {
+    "message": "Contribuer"
+  },
+  "sidebar.docs.faq": {
+    "message": "FAQ"
+  },
+  "sidebar.docs.changelog": {
+    "message": "Journal des modifications"
+  },
+  "sidebar.hardware.overview": {
+    "message": "Vue d'ensemble"
+  },
+  "sidebar.hardware.components": {
+    "message": "Composants électroniques"
+  },
+  "sidebar.hardware.components.mainBoard": {
+    "message": "Carte principale"
+  },
+  "sidebar.hardware.components.sensors": {
+    "message": "Capteurs"
+  },
+  "sidebar.hardware.components.actuators": {
+    "message": "Actionneurs"
+  },
+  "sidebar.hardware.components.display": {
+    "message": "Affichage"
+  },
+  "sidebar.hardware.components.powerSupply": {
+    "message": "Alimentation"
+  },
+  "sidebar.hardware.mechanical": {
+    "message": "Structure mécanique"
+  },
+  "sidebar.hardware.mechanical.enclosure": {
+    "message": "Enceinte"
+  },
+  "sidebar.hardware.mechanical.heating": {
+    "message": "Système de chauffage"
+  },
+  "sidebar.hardware.mechanical.humidification": {
+    "message": "Humidification"
+  },
+  "sidebar.hardware.mechanical.parts3d": {
+    "message": "Pièces 3D"
+  },
+  "sidebar.hardware.assembly": {
+    "message": "Assemblage"
+  },
+  "sidebar.hardware.assembly.bom": {
+    "message": "Liste de matériel (BOM)"
+  },
+  "sidebar.hardware.assembly.pcb": {
+    "message": "Assemblage PCB"
+  },
+  "sidebar.hardware.assembly.mechanical": {
+    "message": "Assemblage mécanique"
+  },
+  "sidebar.hardware.assembly.wiring": {
+    "message": "Câblage"
+  },
+  "sidebar.hardware.assembly.testing": {
+    "message": "Tests"
+  },
+  "sidebar.hardware.schematics": {
+    "message": "Schémas et PCB"
+  },
+  "sidebar.hardware.schematics.circuit": {
+    "message": "Schémas de circuit"
+  },
+  "sidebar.hardware.schematics.layout": {
+    "message": "Routage PCB"
+  },
+  "sidebar.hardware.schematics.gerber": {
+    "message": "Fichiers Gerber"
+  },
+  "sidebar.software.overview": {
+    "message": "Vue d'ensemble"
+  },
+  "sidebar.software.firmware": {
+    "message": "Firmware ESP32"
+  },
+  "sidebar.software.firmware.architecture": {
+    "message": "Architecture du firmware"
+  },
+  "sidebar.software.firmware.setup": {
+    "message": "Configuration initiale"
+  },
+  "sidebar.software.firmware.modules": {
+    "message": "Modules"
+  },
+  "sidebar.software.firmware.control": {
+    "message": "Système de contrôle"
+  },
+  "sidebar.software.firmware.sensors": {
+    "message": "Intégration des capteurs"
+  },
+  "sidebar.software.firmware.display": {
+    "message": "Affichage et UI"
+  },
+  "sidebar.software.firmware.wifi": {
+    "message": "Connectivité WiFi"
+  },
+  "sidebar.software.firmware.logging": {
+    "message": "Enregistrement des données"
+  },
+  "sidebar.software.api": {
+    "message": "Référence API"
+  },
+  "sidebar.software.api.rest": {
+    "message": "API REST"
+  },
+  "sidebar.software.api.websocket": {
+    "message": "WebSocket"
+  },
+  "sidebar.software.api.mqtt": {
+    "message": "MQTT"
+  },
+  "sidebar.software.development": {
+    "message": "Développement"
+  },
+  "sidebar.software.development.environment": {
+    "message": "Configuration de l'environnement"
+  },
+  "sidebar.software.development.standards": {
+    "message": "Normes de codage"
+  },
+  "sidebar.software.development.testing": {
+    "message": "Tests"
+  },
+  "sidebar.software.development.debugging": {
+    "message": "Débogage"
+  },
+  "sidebar.software.development.cicd": {
+    "message": "CI/CD"
+  },
+  "sidebar.software.webapp": {
+    "message": "Application Web"
+  },
+  "sidebar.software.webapp.overview": {
+    "message": "Vue d'ensemble"
+  },
+  "sidebar.software.webapp.features": {
+    "message": "Fonctionnalités"
+  },
+  "sidebar.software.webapp.deployment": {
+    "message": "Déploiement"
+  }
+}

@@ -1,19 +1,19 @@
 ---
 id: intro
-title: Introducción a IncuNest
-sidebar_label: Introducción
+title: Introdução ao IncuNest
+sidebar_label: Introdução
 sidebar_position: 1
 slug: /intro
-description: IncuNest es una incubadora neonatal de código abierto diseñada para entornos con recursos limitados
-keywords: [incubadora, neonatal, open source, código abierto, ESP32]
+description: IncuNest é uma incubadora neonatal de código aberto para ambientes com recursos limitados
+keywords: [incubadora, neonatal, código aberto, open source, ESP32]
 ---
 # Introdução ao IncuNest
 
-<div className="herói herói--primário">
-<div className="container">
-<h1 className="hero__title">🏥 IncuNest</h1>
-<p className="hero__subtitle">Incubadora Neonatal de Código Aberto</p>
-</div>
+<div className="hero hero--primary">
+  <div className="container">
+    <h1 className="hero__title">🏥 IncuNest</h1>
+    <p className="hero__subtitle">Incubadora Neonatal de Código Aberto</p>
+  </div>
 </div>
 
 ## O que é o IncuNest?
