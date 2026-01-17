@@ -8,6 +8,7 @@ import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 
+const DEFAULT_LOCALE = 'es';
 const SUPPORTED_LOCALES = ['es', 'en', 'fr', 'pt'];
 
 function HomepageHeader() {
@@ -34,8 +35,8 @@ function HomepageHeader() {
 export default function Home(): ReactNode {
   const {siteConfig, i18n} = useDocusaurusContext();
 
-  const locale = i18n?.currentLocale ?? 'es';
-  const videoLocale = SUPPORTED_LOCALES.includes(locale) ? locale : 'es';
+  const locale = i18n?.currentLocale ?? DEFAULT_LOCALE;
+  const videoLocale = SUPPORTED_LOCALES.includes(locale) ? locale : DEFAULT_LOCALE;
   const videoSrc = `/videos/${videoLocale}/user-interface.mp4`;
 
   const labels: Record<string, {heading: string; fallback: string; fullScreen: string}> = {
@@ -61,7 +62,7 @@ export default function Home(): ReactNode {
     },
   };
 
-  const {heading, fallback, fullScreen} = labels[videoLocale] ?? labels.es;
+  const {heading, fallback, fullScreen} = labels[videoLocale] ?? labels[DEFAULT_LOCALE];
 
   return (
     <Layout
@@ -76,7 +77,7 @@ export default function Home(): ReactNode {
           <div className={styles.videoWrapper}>
             <video
               controls
-              preload="metadata"
+              preload="none"
               width="100%"
               src={videoSrc}
               aria-label={`${heading} video`}>
