@@ -11,7 +11,23 @@ keywords: [démarrage, installation, configuration, ESP32]
 
 Ce guide vous guidera dans les étapes nécessaires pour configurer et mettre en service votre IncuNest.
 
-Exigences antérieures
+<div style={{marginTop: '1rem'}}>
+  <video
+    controls
+    preload="metadata"
+    width="100%"
+    src="/IncuNest-Docs/videos/fr/user-interface.mp4"
+  >
+    Votre navigateur ne prend pas en charge la balise vidéo.
+  </video>
+  <p>
+    <a href="/IncuNest-Docs/videos/fr/user-interface.mp4" target="_blank" rel="noopener noreferrer">
+      Regarder en plein écran
+    </a>
+  </p>
+</div>
+
+Exigences préalables
 
 Matériel nécessaire
 

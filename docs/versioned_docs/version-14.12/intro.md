@@ -26,12 +26,12 @@ keywords: [incubadora, neonatal, open source, código abierto, ESP32]
     controls
     preload="metadata"
     width="100%"
-    src="/IncuNest-Docs/videos/es/user-interface.mp4"
+    src="/IncuNest-Docs/videos/es/features.mp4"
   >
     Tu navegador no soporta la etiqueta de vídeo.
   </video>
   <p>
-    <a href="/IncuNest-Docs/videos/es/user-interface.mp4" target="_blank" rel="noopener noreferrer">
+    <a href="/IncuNest-Docs/videos/es/features.mp4" target="_blank" rel="noopener noreferrer">
       Ver en pantalla completa
     </a>
   </p>
