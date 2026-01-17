@@ -1,0 +1,230 @@
+{
+  "navbar.documentation": {
+    "message": "Documentation"
+  },
+  "navbar.hardware": {
+    "message": "Hardware"
+  },
+  "navbar.software": {
+    "message": "Software"
+  },
+  "navbar.github": {
+    "message": "GitHub"
+  },
+  "homepage.subtitle": {
+    "message": "Open Source Neonatal Incubator"
+  },
+  "homepage.cta": {
+    "message": "Introduction"
+  },
+  "homepage.meta.title": {
+    "message": "Home - IncuNest"
+  },
+  "homepage.meta.description": {
+    "message": "IncuNest project documentation and resources"
+  },
+  "home.feature.open.title": {
+    "message": "Open Source Design"
+  },
+  "home.feature.open.desc": {
+    "message": "IncuNest hardware and software are open, documented, and reproducible so any community can build and improve the incubator."
+  },
+  "home.feature.collaboration.title": {
+    "message": "Clinical & Maker Collaboration"
+  },
+  "home.feature.collaboration.desc": {
+    "message": "Medical teams, engineers, and makers combine expertise to validate neonatal requirements, safety, and field maintenance."
+  },
+  "home.feature.safety.title": {
+    "message": "Focus on Neonatal Safety"
+  },
+  "home.feature.safety.desc": {
+    "message": "Thermal control protocols, alarms, and redundancies are documented to prioritize newborn safety in low-resource settings."
+  },
+  "sidebar.docs.intro": {
+    "message": "Introduction"
+  },
+  "sidebar.docs.gettingStarted": {
+    "message": "Quick Start"
+  },
+  "sidebar.docs.safetyNotice": {
+    "message": "Safety Notice"
+  },
+  "sidebar.docs.architecture": {
+    "message": "Architecture"
+  },
+  "sidebar.docs.architecture.overview": {
+    "message": "Overview"
+  },
+  "sidebar.docs.architecture.systemDesign": {
+    "message": "System Design"
+  },
+  "sidebar.docs.architecture.communication": {
+    "message": "Communication & Protocols"
+  },
+  "sidebar.docs.guides": {
+    "message": "Guides"
+  },
+  "sidebar.docs.guides.installation": {
+    "message": "Installation"
+  },
+  "sidebar.docs.guides.configuration": {
+    "message": "Configuration"
+  },
+  "sidebar.docs.guides.calibration": {
+    "message": "Calibration"
+  },
+  "sidebar.docs.guides.maintenance": {
+    "message": "Maintenance"
+  },
+  "sidebar.docs.guides.troubleshooting": {
+    "message": "Troubleshooting"
+  },
+  "sidebar.docs.contributing": {
+    "message": "Contributing"
+  },
+  "sidebar.docs.faq": {
+    "message": "FAQ"
+  },
+  "sidebar.docs.changelog": {
+    "message": "Changelog"
+  },
+  "sidebar.hardware.overview": {
+    "message": "Overview"
+  },
+  "sidebar.hardware.components": {
+    "message": "Electronic Components"
+  },
+  "sidebar.hardware.components.mainBoard": {
+    "message": "Main Board"
+  },
+  "sidebar.hardware.components.sensors": {
+    "message": "Sensors"
+  },
+  "sidebar.hardware.components.actuators": {
+    "message": "Actuators"
+  },
+  "sidebar.hardware.components.display": {
+    "message": "Display"
+  },
+  "sidebar.hardware.components.powerSupply": {
+    "message": "Power Supply"
+  },
+  "sidebar.hardware.mechanical": {
+    "message": "Mechanical Structure"
+  },
+  "sidebar.hardware.mechanical.enclosure": {
+    "message": "Enclosure"
+  },
+  "sidebar.hardware.mechanical.heating": {
+    "message": "Heating System"
+  },
+  "sidebar.hardware.mechanical.humidification": {
+    "message": "Humidification"
+  },
+  "sidebar.hardware.mechanical.parts3d": {
+    "message": "3D Parts"
+  },
+  "sidebar.hardware.assembly": {
+    "message": "Assembly"
+  },
+  "sidebar.hardware.assembly.bom": {
+    "message": "Bill of Materials (BOM)"
+  },
+  "sidebar.hardware.assembly.pcb": {
+    "message": "PCB Assembly"
+  },
+  "sidebar.hardware.assembly.mechanical": {
+    "message": "Mechanical Assembly"
+  },
+  "sidebar.hardware.assembly.wiring": {
+    "message": "Wiring"
+  },
+  "sidebar.hardware.assembly.testing": {
+    "message": "Testing"
+  },
+  "sidebar.hardware.schematics": {
+    "message": "Schematics & PCB"
+  },
+  "sidebar.hardware.schematics.circuit": {
+    "message": "Circuit Diagrams"
+  },
+  "sidebar.hardware.schematics.layout": {
+    "message": "PCB Layout"
+  },
+  "sidebar.hardware.schematics.gerber": {
+    "message": "Gerber Files"
+  },
+  "sidebar.software.overview": {
+    "message": "Overview"
+  },
+  "sidebar.software.firmware": {
+    "message": "ESP32 Firmware"
+  },
+  "sidebar.software.firmware.architecture": {
+    "message": "Firmware Architecture"
+  },
+  "sidebar.software.firmware.setup": {
+    "message": "Initial Setup"
+  },
+  "sidebar.software.firmware.modules": {
+    "message": "Modules"
+  },
+  "sidebar.software.firmware.control": {
+    "message": "Control System"
+  },
+  "sidebar.software.firmware.sensors": {
+    "message": "Sensor Integration"
+  },
+  "sidebar.software.firmware.display": {
+    "message": "Display & UI"
+  },
+  "sidebar.software.firmware.wifi": {
+    "message": "WiFi Connectivity"
+  },
+  "sidebar.software.firmware.logging": {
+    "message": "Data Logging"
+  },
+  "sidebar.software.api": {
+    "message": "API Reference"
+  },
+  "sidebar.software.api.rest": {
+    "message": "REST API"
+  },
+  "sidebar.software.api.websocket": {
+    "message": "WebSocket"
+  },
+  "sidebar.software.api.mqtt": {
+    "message": "MQTT"
+  },
+  "sidebar.software.development": {
+    "message": "Development"
+  },
+  "sidebar.software.development.environment": {
+    "message": "Environment Setup"
+  },
+  "sidebar.software.development.standards": {
+    "message": "Coding Standards"
+  },
+  "sidebar.software.development.testing": {
+    "message": "Testing"
+  },
+  "sidebar.software.development.debugging": {
+    "message": "Debugging"
+  },
+  "sidebar.software.development.cicd": {
+    "message": "CI/CD"
+  },
+  "sidebar.software.webapp": {
+    "message": "Web Application"
+  },
+  "sidebar.software.webapp.overview": {
+    "message": "Overview"
+  },
+  "sidebar.software.webapp.features": {
+    "message": "Features"
+  },
+  "sidebar.software.webapp.deployment": {
+    "message": "Deployment"
+  }
+}

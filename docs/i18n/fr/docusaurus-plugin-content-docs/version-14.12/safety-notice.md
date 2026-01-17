@@ -4,16 +4,16 @@ title: Avis de sécurité
 sidebar_label: Avis de sécurité
 sidebar_position: 3
 description: Informations de sécurité importantes pour IncuNest
-keywords: [seguridad, advertencia, uso médico, regulaciones]
+keywords: [sécurité, avertissement, usage médical, réglementations]
 ---
 
-♪ C'est pas vrai.
+## ⚠️ Avis de sécurité
 
-:: Risque important d ' avertissement
-Lisez cet avis complètement avant de construire, assembler ou utiliser IncuNest.
-:: Le cas échéant;
+:::danger Avertissement important
+Lisez cet avis dans son intégralité avant de construire, assembler ou utiliser IncuNest.
+:::
 
-Avertissement
+## Avertissement
 
 IncuNest est un projet open source à des fins éducatives et de recherche. Équipe de développement et contributeurs:
 

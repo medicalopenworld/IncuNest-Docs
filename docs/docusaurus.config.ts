@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import {localize} from './localize';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -113,19 +114,34 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'docsSidebar',
           position: 'left',
-          label: 'Documentación',
+          label: localize({
+            es: 'Documentación',
+            en: 'Documentation',
+            pt: 'Documentação',
+            fr: 'Documentation',
+          }),
         },
         {
           type: 'docSidebar',
           sidebarId: 'hardwareSidebar',
           position: 'left',
-          label: 'Hardware',
+          label: localize({
+            es: 'Hardware',
+            en: 'Hardware',
+            pt: 'Hardware',
+            fr: 'Matériel',
+          }),
         },
         {
           type: 'docSidebar',
           sidebarId: 'softwareSidebar',
           position: 'left',
-          label: 'Software',
+          label: localize({
+            es: 'Software',
+            en: 'Software',
+            pt: 'Software',
+            fr: 'Logiciel',
+          }),
         },
         // Version dropdown
         {

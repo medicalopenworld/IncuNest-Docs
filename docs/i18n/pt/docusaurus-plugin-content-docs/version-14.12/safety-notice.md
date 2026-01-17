@@ -1,14 +1,14 @@
 ---
 id: safety-notice
-title: Aviso de Seguridad
-sidebar_label: Aviso de Seguridad
+title: Aviso de Segurança
+sidebar_label: Aviso de Segurança
 sidebar_position: 3
-description: Información importante de seguridad para IncuNest
-keywords: [seguridad, advertencia, uso médico, regulaciones]
+description: Informações importantes de segurança para o IncuNest
+keywords: [segurança, aviso, uso médico, regulações]
 ---
 # ⚠️ Aviso de segurança
 
-:::perigo Aviso importante
+:::danger Aviso importante
 Leia este aviso completamente antes de construir, montar ou usar o IncuNest.
 :::
 
