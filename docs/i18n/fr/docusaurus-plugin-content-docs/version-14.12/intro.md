@@ -102,14 +102,13 @@ flowchart TB
 - 124; * * Connectivité * * - 124; WiFi 802.11 b / g / n - 124;
 - 124; * * Affichage * * - 124; LCD 20x4 / TFT 3.5 "- 124;
 
-Licence
+## Licence
 
-IncuNest est autorisé bas * * GPL-3.0 * *, ce qui signifie que:
+IncuNest est sous licence **MIT**, ce qui signifie que :
 
-- Oui. Vous pouvez utiliser, modifier et distribuer le projet
-- Vous devez garder le code source ouvert
-- Oui. Vous devez inclure la même licence dans le travail dérivé
-- Oui. Vous devez documenter les modifications apportées
+- ✅ Vous pouvez utiliser, modifier et distribuer le projet, y compris à des fins commerciales
+- ✅ Vous devez inclure l'avis de copyright et la licence MIT dans les copies ou travaux dérivés
+- ⚠️ Aucune garantie n'est fournie ; utilisez-le à vos risques et périls
 
 :: Avertissement de sécurité
 Ce projet est destiné à des fins éducatives et de recherche. Toute utilisation clinique doit respecter les règlements médicaux locaux et exiger une certification appropriée.

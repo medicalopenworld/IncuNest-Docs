@@ -173,8 +173,8 @@ const config: Config = {
           title: 'Comunidad',
           items: [
             {
-              label: 'GitHub Discussions',
-              href: 'https://github.com/medicalopenworld/IncuNest/discussions',
+              label: 'Comunidades',
+              href: 'https://github.com/orgs/medicalopenworld/discussions',
             },
             {
               label: 'Reportar un Issue',
@@ -203,8 +203,8 @@ const config: Config = {
           title: 'Legal',
           items: [
             {
-              label: 'Licencia GPL-3.0',
-              href: 'https://github.com/medicalopenworld/IncuNest/blob/main/LICENSE',
+              label: 'Licencia MIT',
+              href: 'https://github.com/medicalopenworld/IncuNest/blob/master/LICENSE',
             },
             {
               label: 'Aviso de Seguridad',
@@ -213,7 +213,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Medical Open World - IncuNest. Built with Docusaurus. Licensed under GPL-3.0.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Medical Open World - IncuNest. Built with Docusaurus. Licensed under MIT.`,
     },
     prism: {
       theme: prismThemes.github,
