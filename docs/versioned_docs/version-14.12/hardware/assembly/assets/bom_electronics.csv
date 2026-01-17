@@ -1,0 +1,3 @@
+componente,descripcion,cantidad
+ESP32,ESP32-WROOM-32,1
+SHT31,Sensor temperatura/humedad,1

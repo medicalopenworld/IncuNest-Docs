@@ -1,0 +1,130 @@
+{
+  "docsSidebar": [
+    "intro",
+    "getting-started",
+    "safety-notice",
+    {
+      "type": "category",
+      "label": "Arquitectura",
+      "collapsed": false,
+      "items": [
+        "architecture/overview",
+        "architecture/system-design",
+        "architecture/communication"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Guías",
+      "collapsed": false,
+      "items": [
+        "guides/installation",
+        "guides/configuration",
+        "guides/calibration",
+        "guides/maintenance",
+        "guides/troubleshooting"
+      ]
+    },
+    "contributing",
+    "faq",
+    "changelog"
+  ],
+  "hardwareSidebar": [
+    "hardware/overview",
+    {
+      "type": "category",
+      "label": "Componentes Electrónicos",
+      "collapsed": false,
+      "items": [
+        "hardware/electronics/main-board",
+        "hardware/electronics/sensors",
+        "hardware/electronics/actuators",
+        "hardware/electronics/display",
+        "hardware/electronics/power-supply"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Estructura Mecánica",
+      "collapsed": false,
+      "items": [
+        "hardware/mechanical/enclosure",
+        "hardware/mechanical/heating-system",
+        "hardware/mechanical/humidification",
+        "hardware/mechanical/3d-parts"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Ensamblaje",
+      "collapsed": false,
+      "items": [
+        "hardware/assembly/bom",
+        "hardware/assembly/pcb-assembly",
+        "hardware/assembly/mechanical-assembly",
+        "hardware/assembly/wiring",
+        "hardware/assembly/testing"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Esquemáticos y PCB",
+      "collapsed": false,
+      "items": [
+        "hardware/schematics/circuit-diagrams",
+        "hardware/schematics/pcb-layout",
+        "hardware/schematics/gerber-files"
+      ]
+    }
+  ],
+  "softwareSidebar": [
+    "software/overview",
+    {
+      "type": "category",
+      "label": "Firmware ESP32",
+      "collapsed": false,
+      "items": [
+        "software/firmware/architecture",
+        "software/firmware/setup",
+        "software/firmware/modules",
+        "software/firmware/control-system",
+        "software/firmware/sensors-integration",
+        "software/firmware/display-ui",
+        "software/firmware/wifi-connectivity",
+        "software/firmware/data-logging"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "API Reference",
+      "collapsed": false,
+      "items": [
+        "software/api/rest-api",
+        "software/api/websocket",
+        "software/api/mqtt"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Desarrollo",
+      "collapsed": false,
+      "items": [
+        "software/development/environment-setup",
+        "software/development/coding-standards",
+        "software/development/testing",
+        "software/development/debugging",
+        "software/development/ci-cd"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Aplicación Web",
+      "collapsed": true,
+      "items": [
+        "software/webapp/webapp-overview",
+        "software/webapp/webapp-features",
+        "software/webapp/webapp-deployment"
+      ]
+    }
+  ]
+}
