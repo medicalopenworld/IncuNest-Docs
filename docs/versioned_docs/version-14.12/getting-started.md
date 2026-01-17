@@ -11,6 +11,22 @@ keywords: [inicio, instalación, configuración, ESP32]
 
 Esta guía te llevará a través de los pasos necesarios para configurar y poner en funcionamiento tu IncuNest.
 
+<div style={{marginTop: '1rem'}}>
+  <video
+    controls
+    preload="metadata"
+    width="100%"
+    src="/IncuNest-Docs/videos/es/user-interface.mp4"
+  >
+    Tu navegador no soporta la etiqueta de vídeo.
+  </video>
+  <p>
+    <a href="/IncuNest-Docs/videos/es/user-interface.mp4" target="_blank" rel="noopener noreferrer">
+      Ver en pantalla completa
+    </a>
+  </p>
+</div>
+
 ## Requisitos Previos
 
 ### Hardware Necesario

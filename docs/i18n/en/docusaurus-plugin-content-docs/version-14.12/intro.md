@@ -25,12 +25,12 @@ keywords: [incubator, neonatal, open source, ESP32]
     controls
     preload="metadata"
     width="100%"
-    src="/IncuNest-Docs/videos/en/user-interface.mp4"
+    src="/IncuNest-Docs/videos/en/features.mp4"
   >
     Your browser does not support the video tag.
   </video>
   <p>
-    <a href="/IncuNest-Docs/videos/en/user-interface.mp4" target="_blank" rel="noopener noreferrer">
+    <a href="/IncuNest-Docs/videos/en/features.mp4" target="_blank" rel="noopener noreferrer">
       Watch full screen
     </a>
   </p>
