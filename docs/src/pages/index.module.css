@@ -21,3 +21,16 @@
   align-items: center;
   justify-content: center;
 }
+
+.videoSection {
+  margin-top: 2rem;
+}
+
+.videoWrapper {
+  margin-top: 1rem;
+}
+
+.videoLink {
+  text-align: right;
+  margin-top: 0.5rem;
+}
