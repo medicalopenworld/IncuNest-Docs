@@ -1,8 +1,5 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
-
-const locale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'es';
-const localize = (values: Record<string, string>) =>
-  values[locale] ?? values.es;
+import {localize} from './localize';
 
 /**
  * IncuNest Documentation Sidebars

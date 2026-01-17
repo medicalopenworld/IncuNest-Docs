@@ -1,9 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
-const locale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'es';
-const localize = (values: Record<string, string>) => values[locale] ?? values.es;
+import {localize} from './localize';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
