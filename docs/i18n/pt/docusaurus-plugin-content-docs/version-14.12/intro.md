@@ -103,12 +103,11 @@ flowchart TB
 
 ## Licença
 
-O IncuNest é licenciado sob **GPL-3.0**, o que significa que:
+O IncuNest é licenciado sob **MIT**, o que significa que:
 
-- ✅ Você pode usar, modificar e distribuir o projeto
-- ✅ Você deve manter o código-fonte aberto
-- ✅ Você deve incluir a mesma licença em trabalhos derivados
-- ✅ Você deve documentar as alterações feitas
+- ✅ Você pode usar, modificar e distribuir o projeto, inclusive comercialmente
+- ✅ Você deve incluir o aviso de copyright e a licença MIT em cópias ou trabalhos derivados
+- ⚠️ Nenhuma garantia é fornecida; use por sua conta e risco
 
 :::aviso Aviso de segurança
 Este projeto tem fins educacionais e de pesquisa. Qualquer uso clínico deve estar em conformidade com os regulamentos médicos locais e exigir certificação apropriada.
