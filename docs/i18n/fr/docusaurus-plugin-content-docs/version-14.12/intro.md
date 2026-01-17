@@ -17,9 +17,9 @@ keywords: [incubadora, neonatal, open source, código abierto, ESP32]
 < / div >
 < / div >
 
-♪ ♪ Qu'est-ce qu'IncuNest?
+## Qu'est-ce qu'IncuNest?
 
-* * IncuNest * * est un projet de matériel et de logiciels libres qui vise à fournir un incubateur néonatal accessible et peu coûteux pour les environnements à ressources limitées. Le projet est conçu pour répondre aux normes de sécurité médicale tout en maintenant la facilité de fabrication et d'entretien.
+**IncuNest** est un projet de matériel et de logiciels libres qui vise à fournir un incubateur néonatal accessible et peu coûteux pour les environnements à ressources limitées. Le projet est conçu pour répondre aux normes de sécurité médicale tout en maintenant la facilité de fabrication et d'entretien.
 
 <div style={{marginTop: '1rem'}}>
   <video
@@ -37,9 +37,9 @@ keywords: [incubadora, neonatal, open source, código abierto, ESP32]
   </p>
 </div>
 
-:: Conseil Mission de projet
+:::tip Mission du projet
 Réduire la mortalité néonatale en fournissant une technologie médicale de qualité aux communautés qui en ont le plus besoin.
-:: Le cas échéant;
+:::
 
 Caractéristiques principales
 
