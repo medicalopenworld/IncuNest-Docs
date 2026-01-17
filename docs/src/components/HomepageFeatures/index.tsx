@@ -11,32 +11,34 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Diseño de Código Abierto',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        El hardware y software de IncuNest son abiertos, documentados y
+        reproducibles para que cualquier comunidad pueda construir y mejorar la
+        incubadora.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Colaboración Clínica y Maker',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Equipos médicos, ingenieros y makers aportan experiencia conjunta para
+        validar requisitos neonatales, seguridad y mantenimiento en campo.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Enfoque en Seguridad Neonatal',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Protocolos de control térmico, alarmas y redundancias están documentados
+        para priorizar la seguridad del recién nacido en entornos de recursos
+        limitados.
       </>
     ),
   },
