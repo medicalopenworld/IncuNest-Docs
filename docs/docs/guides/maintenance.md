@@ -17,7 +17,7 @@ Un mantenimiento adecuado es esencial para el funcionamiento seguro y confiable 
   controls
   preload="metadata"
   style={{width: '100%', maxWidth: 800}}
-  src="/videos/es/maintenance.mp4"
+  src="/IncuNest-Docs/videos/es/maintenance.mp4"
 >
   Tu navegador no soporta la reproducción de video.
 </video>
