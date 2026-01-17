@@ -36,6 +36,31 @@ export default function Home(): ReactNode {
   const videoLocale = ['es', 'en', 'fr', 'pt'].includes(locale) ? locale : 'es';
   const videoSrc = `/videos/${videoLocale}/user-interface.mp4`;
 
+  const labels: Record<string, {heading: string; fallback: string; fullScreen: string}> = {
+    es: {
+      heading: '¿Qué es IncuNest?',
+      fallback: 'Tu navegador no soporta la etiqueta de vídeo.',
+      fullScreen: 'Ver en pantalla completa',
+    },
+    en: {
+      heading: 'What is IncuNest?',
+      fallback: 'Your browser does not support the video tag.',
+      fullScreen: 'Watch full screen',
+    },
+    fr: {
+      heading: "Qu'est-ce qu'IncuNest ?",
+      fallback: 'Votre navigateur ne prend pas en charge la balise vidéo.',
+      fullScreen: 'Regarder en plein écran',
+    },
+    pt: {
+      heading: 'O que é o IncuNest?',
+      fallback: 'Seu navegador não oferece suporte à tag de vídeo.',
+      fullScreen: 'Assistir em tela cheia',
+    },
+  };
+
+  const {heading, fallback, fullScreen} = labels[videoLocale] ?? labels.es;
+
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
@@ -44,15 +69,15 @@ export default function Home(): ReactNode {
       <main>
         <section className="container" style={{marginTop: '2rem'}}>
           <Heading as="h2" className="text--center">
-            ¿Qué es IncuNest?
+            {heading}
           </Heading>
           <div style={{marginTop: '1rem'}}>
             <video controls preload="metadata" width="100%" src={videoSrc}>
-              Tu navegador no soporta la etiqueta de vídeo.
+              {fallback}
             </video>
             <p style={{textAlign: 'right', marginTop: '0.5rem'}}>
               <a href={videoSrc} target="_blank" rel="noopener noreferrer">
-                Ver en pantalla completa
+                {fullScreen}
               </a>
             </p>
           </div>
