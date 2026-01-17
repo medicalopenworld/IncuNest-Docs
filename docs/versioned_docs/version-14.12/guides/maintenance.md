@@ -13,6 +13,15 @@ keywords: [mantenimiento, limpieza, servicio]
 
 Un mantenimiento adecuado es esencial para el funcionamiento seguro y confiable de IncuNest.
 
+<video
+  controls
+  preload="metadata"
+  style={{width: '100%', maxWidth: 800}}
+  src="/videos/es/maintenance.mp4"
+>
+  Tu navegador no soporta la reproducción de video.
+</video>
+
 ### Frecuencia Recomendada
 
 | Tarea | Frecuencia | Responsable |
