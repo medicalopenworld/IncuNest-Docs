@@ -102,7 +102,7 @@ flowchart TB
 - 124; * * Connectivité * * - 124; WiFi 802.11 b / g / n - 124;
 - 124; * * Affichage * * - 124; LCD 20x4 / TFT 3.5 "- 124;
 
-Licence
+## Licence
 
 IncuNest est sous licence **MIT**, ce qui signifie que :
 
