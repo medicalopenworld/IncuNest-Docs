@@ -20,6 +20,22 @@ keywords: [incubadora, neonatal, open source, código abierto, ESP32]
 
 **IncuNest** é um projeto de hardware e software de código aberto que visa fornecer uma **incubadora neonatal acessível e de baixo custo** para ambientes com recursos limitados. O projeto foi projetado para atender aos padrões de segurança médica, mantendo a facilidade de fabricação e manutenção.
 
+<div style={{marginTop: '1rem'}}>
+  <video
+    controls
+    preload="metadata"
+    width="100%"
+    src="/videos/pt/user-interface.mp4"
+  >
+    Seu navegador não oferece suporte à tag de vídeo.
+  </video>
+  <p>
+    <a href="/videos/pt/user-interface.mp4" target="_blank" rel="noopener noreferrer">
+      Assistir em tela cheia
+    </a>
+  </p>
+</div>
+
 :::dica Missão do Projeto
 Reduzir a mortalidade neonatal fornecendo tecnologia médica de qualidade às comunidades que mais dela necessitam.
 :::
