@@ -1,14 +1,14 @@
 {
   "link.title.Documentación": {
-    "message": "Documentation",
+    "message": "Documentação",
     "description": "The title of the footer links column with title=Documentación in the footer"
   },
   "link.title.Comunidad": {
-    "message": "Community",
+    "message": "Comunidade",
     "description": "The title of the footer links column with title=Comunidad in the footer"
   },
   "link.title.Recursos": {
-    "message": "Resources",
+    "message": "Recursos",
     "description": "The title of the footer links column with title=Recursos in the footer"
   },
   "link.title.Legal": {
@@ -16,11 +16,11 @@
     "description": "The title of the footer links column with title=Legal in the footer"
   },
   "link.item.label.Introducción": {
-    "message": "Introduction",
+    "message": "Introdução",
     "description": "The label of footer link with label=Introducción linking to /docs/intro"
   },
   "link.item.label.Guía de Inicio Rápido": {
-    "message": "Quick Start Guide",
+    "message": "Guia de Início Rápido",
     "description": "The label of footer link with label=Guía de Inicio Rápido linking to /docs/getting-started"
   },
   "link.item.label.Hardware": {
@@ -32,19 +32,19 @@
     "description": "The label of footer link with label=Software linking to /docs/software/overview"
   },
   "link.item.label.Comunidades": {
-    "message": "Communities",
+    "message": "Comunidades",
     "description": "The label of footer link with label=Comunidades linking to https://github.com/orgs/medicalopenworld/discussions"
   },
   "link.item.label.Reportar un Issue": {
-    "message": "Report an Issue",
+    "message": "Reportar um Problema",
     "description": "The label of footer link with label=Reportar un Issue linking to https://github.com/medicalopenworld/IncuNest/issues"
   },
   "link.item.label.Contribuir": {
-    "message": "Contribute",
+    "message": "Contribuir",
     "description": "The label of footer link with label=Contribuir linking to /docs/contributing"
   },
   "link.item.label.Repositorio Principal": {
-    "message": "Main Repository",
+    "message": "Repositório Principal",
     "description": "The label of footer link with label=Repositorio Principal linking to https://github.com/medicalopenworld/IncuNest"
   },
   "link.item.label.Medical Open World": {
@@ -52,15 +52,15 @@
     "description": "The label of footer link with label=Medical Open World linking to https://github.com/medicalopenworld"
   },
   "link.item.label.Licencia MIT": {
-    "message": "MIT License",
+    "message": "Licença MIT",
     "description": "The label of footer link with label=Licencia MIT linking to https://github.com/medicalopenworld/IncuNest/blob/master/LICENSE"
   },
   "link.item.label.Aviso de Seguridad": {
-    "message": "Safety Notice",
+    "message": "Aviso de Segurança",
     "description": "The label of footer link with label=Aviso de Seguridad linking to /docs/safety-notice"
   },
   "copyright": {
-    "message": "Copyright © 2026 Medical Open World - IncuNest. Built with Docusaurus. Licensed under MIT.",
+    "message": "Copyright © 2026 Medical Open World - IncuNest. Construído com Docusaurus. Licenciado sob MIT.",
     "description": "The footer copyright"
   }
 }

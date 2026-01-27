@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Arquitectura General
-sidebar_label: Visión General
+sidebar_label: Overview
 sidebar_position: 1
 description: Visión general de la arquitectura del sistema IncuNest
 keywords: [arquitectura, sistema, diseño, componentes]

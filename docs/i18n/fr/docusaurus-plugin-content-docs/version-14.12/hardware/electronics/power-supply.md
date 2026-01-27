@@ -1,7 +1,7 @@
 ---
 id: power-supply
-title: Fuente de Alimentación
-sidebar_label: Fuente de Alimentación
+title: Alimentation
+sidebar_label: Alimentation
 sidebar_position: 5
 description: Sistema de alimentación de IncuNest
 keywords: [fuente, alimentación, voltaje, corriente, UPS]

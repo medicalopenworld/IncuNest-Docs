@@ -1,7 +1,7 @@
 ---
 id: system-design
 title: Diseño del Sistema
-sidebar_label: Diseño del Sistema
+sidebar_label: System Design
 sidebar_position: 2
 description: Diseño técnico detallado del sistema IncuNest
 keywords: [diseño, técnico, sistema, control]

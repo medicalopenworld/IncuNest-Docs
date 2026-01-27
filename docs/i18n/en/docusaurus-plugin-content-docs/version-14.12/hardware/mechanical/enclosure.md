@@ -1,7 +1,7 @@
 ---
 id: enclosure
 title: Carcasa y Estructura
-sidebar_label: Carcasa
+sidebar_label: Enclosure
 sidebar_position: 1
 description: Diseño de la estructura mecánica de IncuNest
 keywords: [carcasa, estructura, acrílico, mecánica]

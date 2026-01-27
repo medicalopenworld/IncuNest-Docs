@@ -1,7 +1,7 @@
 ---
 id: 3d-parts
 title: Piezas Impresas en 3D
-sidebar_label: Piezas 3D
+sidebar_label: 3D Parts
 sidebar_position: 4
 description: Componentes impresos en 3D para IncuNest
 keywords: [impresión 3D, PLA, PETG, STL, piezas]

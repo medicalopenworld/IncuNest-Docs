@@ -1,7 +1,7 @@
 ---
 id: webapp-overview
 title: Aplicación Web
-sidebar_label: Visión General
+sidebar_label: Vue d'ensemble
 sidebar_position: 1
 description: Documentación de la aplicación web de IncuNest
 keywords: [webapp, interfaz, Vue.js, dashboard]

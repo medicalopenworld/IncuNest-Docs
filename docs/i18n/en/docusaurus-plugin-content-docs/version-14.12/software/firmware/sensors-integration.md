@@ -1,7 +1,7 @@
 ---
 id: sensors-integration
 title: Integración de Sensores
-sidebar_label: Sensores
+sidebar_label: Sensors
 sidebar_position: 4
 description: Guía de integración de sensores en el firmware de IncuNest
 keywords: [sensores, SHT31, DS18B20, I2C, OneWire]

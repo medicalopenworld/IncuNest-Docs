@@ -1,7 +1,7 @@
 ---
 id: wiring
 title: Cableado
-sidebar_label: Cableado
+sidebar_label: Wiring
 sidebar_position: 4
 description: Guía de cableado de IncuNest
 keywords: [cableado, conexiones, cables, instalación]

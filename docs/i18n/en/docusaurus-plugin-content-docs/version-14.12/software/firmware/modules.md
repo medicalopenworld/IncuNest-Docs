@@ -1,7 +1,7 @@
 ---
 id: modules
 title: Módulos del Firmware
-sidebar_label: Módulos
+sidebar_label: Modules
 sidebar_position: 2
 description: Descripción de los módulos que componen el firmware de IncuNest
 keywords: [firmware, módulos, componentes, estructura]

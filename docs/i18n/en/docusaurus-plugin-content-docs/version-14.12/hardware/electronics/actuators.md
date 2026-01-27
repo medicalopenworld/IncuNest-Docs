@@ -1,7 +1,7 @@
 ---
 id: actuators
 title: Actuadores
-sidebar_label: Actuadores
+sidebar_label: Actuators
 sidebar_position: 3
 description: Control de actuadores en IncuNest
 keywords: [actuadores, calefactor, ventilador, MOSFET, PWM]

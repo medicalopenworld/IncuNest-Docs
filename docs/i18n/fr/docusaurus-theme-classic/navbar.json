@@ -4,7 +4,7 @@
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "IncuNest Logo",
+    "message": "Logo IncuNest",
     "description": "The alt text of navbar logo"
   },
   "item.label.Documentación": {
@@ -12,11 +12,11 @@
     "description": "Navbar item with label Documentación"
   },
   "item.label.Hardware": {
-    "message": "Hardware",
+    "message": "Matériel",
     "description": "Navbar item with label Hardware"
   },
   "item.label.Software": {
-    "message": "Software",
+    "message": "Logiciel",
     "description": "Navbar item with label Software"
   },
   "item.label.GitHub": {

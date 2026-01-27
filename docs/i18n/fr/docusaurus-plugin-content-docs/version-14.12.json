@@ -12,35 +12,35 @@
     "description": "The label for category 'Guías' in sidebar 'docsSidebar'"
   },
   "sidebar.hardwareSidebar.category.Componentes Electrónicos": {
-    "message": "Electronic Components",
+    "message": "Composants électroniques",
     "description": "The label for category 'Componentes Electrónicos' in sidebar 'hardwareSidebar'"
   },
   "sidebar.hardwareSidebar.category.Estructura Mecánica": {
-    "message": "Mechanical Structure",
+    "message": "Structure mécanique",
     "description": "The label for category 'Estructura Mecánica' in sidebar 'hardwareSidebar'"
   },
   "sidebar.hardwareSidebar.category.Ensamblaje": {
-    "message": "Assembly",
+    "message": "Assemblage",
     "description": "The label for category 'Ensamblaje' in sidebar 'hardwareSidebar'"
   },
   "sidebar.hardwareSidebar.category.Esquemáticos y PCB": {
-    "message": "Schematics & PCB",
+    "message": "Schémas et PCB",
     "description": "The label for category 'Esquemáticos y PCB' in sidebar 'hardwareSidebar'"
   },
   "sidebar.softwareSidebar.category.Firmware ESP32": {
-    "message": "ESP32 Firmware",
+    "message": "Firmware ESP32",
     "description": "The label for category 'Firmware ESP32' in sidebar 'softwareSidebar'"
   },
   "sidebar.softwareSidebar.category.API Reference": {
-    "message": "API Reference",
+    "message": "Référence API",
     "description": "The label for category 'API Reference' in sidebar 'softwareSidebar'"
   },
   "sidebar.softwareSidebar.category.Desarrollo": {
-    "message": "Development",
+    "message": "Développement",
     "description": "The label for category 'Desarrollo' in sidebar 'softwareSidebar'"
   },
   "sidebar.softwareSidebar.category.Aplicación Web": {
-    "message": "Web Application",
+    "message": "Application Web",
     "description": "The label for category 'Aplicación Web' in sidebar 'softwareSidebar'"
   }
 }

@@ -1,7 +1,7 @@
 ---
 id: heating-system
 title: Sistema de Calefacción
-sidebar_label: Sistema de Calefacción
+sidebar_label: Heating System
 sidebar_position: 2
 description: Diseño del sistema de calefacción de IncuNest
 keywords: [calefacción, temperatura, resistencia, ventilador]

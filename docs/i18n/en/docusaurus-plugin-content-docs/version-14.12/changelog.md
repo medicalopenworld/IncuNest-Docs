@@ -1,6 +1,6 @@
 ---
 id: changelog
-title: Registro de Cambios
+title: Changelog
 sidebar_label: Changelog
 sidebar_position: 12
 description: Historial de versiones de IncuNest

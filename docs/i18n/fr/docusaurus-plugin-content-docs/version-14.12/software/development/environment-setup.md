@@ -1,7 +1,7 @@
 ---
 id: environment-setup
-title: Configuración del Entorno
-sidebar_label: Entorno de Desarrollo
+title: Configuration de l'environnement
+sidebar_label: Configuration de l'environnement
 sidebar_position: 1
 description: Configuración del entorno de desarrollo para contribuir a IncuNest
 keywords: [desarrollo, setup, herramientas, IDE]

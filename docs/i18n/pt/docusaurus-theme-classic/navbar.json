@@ -4,11 +4,11 @@
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "IncuNest Logo",
+    "message": "Logo IncuNest",
     "description": "The alt text of navbar logo"
   },
   "item.label.Documentación": {
-    "message": "Documentation",
+    "message": "Documentação",
     "description": "Navbar item with label Documentación"
   },
   "item.label.Hardware": {

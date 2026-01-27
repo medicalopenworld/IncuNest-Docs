@@ -1,7 +1,7 @@
 ---
 id: installation
 title: Guía de Instalación
-sidebar_label: Instalación
+sidebar_label: Installation
 sidebar_position: 1
 description: Guía completa de instalación de IncuNest
 keywords: [instalación, configuración, setup]

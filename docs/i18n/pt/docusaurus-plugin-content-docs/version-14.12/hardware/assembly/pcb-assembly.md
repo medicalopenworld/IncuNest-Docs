@@ -1,6 +1,6 @@
 ---
 id: pcb-assembly
-title: Ensamblaje del PCB
+title: Montagem de PCB
 sidebar_label: Ensamblaje PCB
 sidebar_position: 2
 description: Guía de ensamblaje del PCB de IncuNest

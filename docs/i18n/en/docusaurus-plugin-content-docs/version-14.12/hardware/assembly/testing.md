@@ -1,7 +1,7 @@
 ---
 id: testing
 title: Pruebas y Verificación
-sidebar_label: Pruebas
+sidebar_label: Testing
 sidebar_position: 5
 description: Guía de pruebas para IncuNest
 keywords: [pruebas, verificación, calibración, QA]

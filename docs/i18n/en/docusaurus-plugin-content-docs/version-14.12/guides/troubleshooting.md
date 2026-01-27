@@ -1,7 +1,7 @@
 ---
 id: troubleshooting
 title: Solución de Problemas
-sidebar_label: Solución de Problemas
+sidebar_label: Troubleshooting
 sidebar_position: 5
 description: Guía de diagnóstico y solución de problemas de IncuNest
 keywords: [problemas, errores, diagnóstico, solución]

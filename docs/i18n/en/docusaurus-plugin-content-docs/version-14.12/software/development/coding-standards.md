@@ -1,7 +1,7 @@
 ---
 id: coding-standards
 title: Estándares de Código
-sidebar_label: Estándares de Código
+sidebar_label: Coding Standards
 sidebar_position: 2
 description: Guía de estilo y estándares de código para IncuNest
 keywords: [código, estilo, estándares, convenciones]

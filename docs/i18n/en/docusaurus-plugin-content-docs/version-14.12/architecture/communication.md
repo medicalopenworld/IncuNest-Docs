@@ -1,7 +1,7 @@
 ---
 id: communication
 title: Comunicaciones
-sidebar_label: Comunicaciones
+sidebar_label: Communication & Protocols
 sidebar_position: 3
 description: Protocolos de comunicación y APIs de IncuNest
 keywords: [comunicación, WiFi, API, MQTT, WebSocket]

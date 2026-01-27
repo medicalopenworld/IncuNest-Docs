@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Software - Visión General
-sidebar_label: Visión General
+sidebar_label: Overview
 sidebar_position: 1
 description: Visión general del software de IncuNest
 keywords: [software, firmware, ESP32, arquitectura]
