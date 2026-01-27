@@ -1,7 +1,7 @@
 ---
 id: maintenance
 title: Mantenimiento
-sidebar_label: Mantenimiento
+sidebar_label: Manutenção
 sidebar_position: 4
 description: Guía de mantenimiento preventivo y correctivo de IncuNest
 keywords: [mantenimiento, limpieza, servicio]

@@ -1,7 +1,7 @@
 ---
 id: circuit-diagrams
 title: Diagramas de Circuito
-sidebar_label: Diagramas de Circuito
+sidebar_label: Circuit Diagrams
 sidebar_position: 1
 description: Diagramas esquemáticos de los circuitos de IncuNest
 keywords: [esquemático, circuito, diagrama, electrónica]

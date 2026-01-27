@@ -1,7 +1,7 @@
 ---
 id: pcb-assembly
-title: Ensamblaje del PCB
-sidebar_label: Ensamblaje PCB
+title: PCB Assembly
+sidebar_label: PCB Assembly
 sidebar_position: 2
 description: Guía de ensamblaje del PCB de IncuNest
 keywords: [PCB, soldadura, ensamblaje, electrónica]

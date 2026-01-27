@@ -1,7 +1,7 @@
 ---
 id: overview
 title: Hardware - Visión General
-sidebar_label: Visión General
+sidebar_label: Visão Geral
 sidebar_position: 1
 description: Visión general del hardware de IncuNest
 keywords: [hardware, componentes, PCB, electrónica]

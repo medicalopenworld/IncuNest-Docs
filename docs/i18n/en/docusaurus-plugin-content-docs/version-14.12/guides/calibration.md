@@ -1,7 +1,7 @@
 ---
 id: calibration
 title: Guía de Calibración
-sidebar_label: Calibración
+sidebar_label: Calibration
 sidebar_position: 3
 description: Procedimiento de calibración de sensores de IncuNest
 keywords: [calibración, sensores, temperatura, humedad]

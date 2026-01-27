@@ -1,7 +1,7 @@
 ---
 id: architecture
-title: Arquitectura del Firmware
-sidebar_label: Arquitectura
+title: Architecture du firmware
+sidebar_label: Architecture
 sidebar_position: 1
 description: Arquitectura del firmware de IncuNest
 keywords: [firmware, arquitectura, ESP32, diseño]

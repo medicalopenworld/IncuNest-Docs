@@ -1,6 +1,6 @@
 ---
 id: bom
-title: Lista de Materiales (BOM)
+title: Bill of Materials (BOM)
 sidebar_label: BOM
 sidebar_position: 1
 description: Lista completa de materiales para construir IncuNest

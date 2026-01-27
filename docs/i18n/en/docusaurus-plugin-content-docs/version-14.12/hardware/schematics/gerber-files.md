@@ -1,7 +1,7 @@
 ---
 id: gerber-files
 title: Archivos Gerber
-sidebar_label: Archivos Gerber
+sidebar_label: Gerber Files
 sidebar_position: 3
 description: Información sobre los archivos Gerber para fabricación del PCB
 keywords: [gerber, fabricación, PCB, manufactura]

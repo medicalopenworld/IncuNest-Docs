@@ -1,7 +1,7 @@
 ---
 id: control-system
 title: Sistema de Control
-sidebar_label: Sistema de Control
+sidebar_label: Système de contrôle
 sidebar_position: 3
 description: Documentación del sistema de control PID de IncuNest
 keywords: [PID, control, temperatura, regulación]

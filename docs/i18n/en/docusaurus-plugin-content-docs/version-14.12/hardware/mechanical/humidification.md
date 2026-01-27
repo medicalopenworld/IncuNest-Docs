@@ -1,7 +1,7 @@
 ---
 id: humidification
 title: Sistema de Humidificación
-sidebar_label: Humidificación
+sidebar_label: Humidification
 sidebar_position: 3
 description: Sistema de control de humedad de IncuNest
 keywords: [humedad, humidificador, ultrasónico]

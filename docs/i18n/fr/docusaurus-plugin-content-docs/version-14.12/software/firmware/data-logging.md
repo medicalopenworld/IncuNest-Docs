@@ -1,6 +1,6 @@
 ---
 id: data-logging
-title: Registro de Datos
+title: Enregistrement des données
 sidebar_label: Data Logging
 sidebar_position: 7
 description: Sistema de registro de datos en IncuNest

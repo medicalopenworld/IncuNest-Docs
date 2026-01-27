@@ -1,7 +1,7 @@
 ---
 id: mechanical-assembly
 title: Ensamblaje Mecánico
-sidebar_label: Ensamblaje Mecánico
+sidebar_label: Mechanical Assembly
 sidebar_position: 3
 description: Guía de ensamblaje mecánico de IncuNest
 keywords: [ensamblaje, mecánico, estructura, carcasa]

@@ -1,6 +1,6 @@
 ---
 id: wifi-connectivity
-title: Conectividad WiFi
+title: Connectivité WiFi
 sidebar_label: WiFi
 sidebar_position: 6
 description: Implementación de conectividad WiFi en IncuNest

@@ -1,7 +1,7 @@
 ---
 id: webapp-features
 title: Características do Web App
-sidebar_label: Características
+sidebar_label: Funcionalidades
 sidebar_position: 2
 description: Características e funcionalidades da aplicação Web do IncuNest
 keywords: [webapp, características, funcionalidades, UI]

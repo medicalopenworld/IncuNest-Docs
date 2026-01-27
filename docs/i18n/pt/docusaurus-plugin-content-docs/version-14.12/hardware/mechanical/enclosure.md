@@ -1,7 +1,7 @@
 ---
 id: enclosure
 title: Pasta e Estrutura
-sidebar_label: Carcasa
+sidebar_label: Gabinete
 sidebar_position: 1
 description: Design da estrutura mecânica de IncuNest
 keywords: [carcasa, estructura, acrílico, mecánica]

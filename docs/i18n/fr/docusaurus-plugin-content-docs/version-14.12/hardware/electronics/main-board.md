@@ -1,7 +1,7 @@
 ---
 id: main-board
 title: Placa Principal
-sidebar_label: Placa Principal
+sidebar_label: Carte principale
 sidebar_position: 1
 description: Documentación de la placa principal de IncuNest
 keywords: [PCB, placa, ESP32, electrónica]

@@ -1,6 +1,6 @@
 ---
 id: faq
-title: Preguntas Frecuentes
+title: FAQ
 sidebar_label: FAQ
 sidebar_position: 11
 description: Preguntas frecuentes sobre IncuNest

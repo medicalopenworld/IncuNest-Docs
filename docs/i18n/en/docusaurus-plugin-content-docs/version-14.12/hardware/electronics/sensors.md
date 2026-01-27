@@ -1,7 +1,7 @@
 ---
 id: sensors
 title: Sensores
-sidebar_label: Sensores
+sidebar_label: Sensors
 sidebar_position: 2
 description: Documentación de los sensores de IncuNest
 keywords: [sensores, temperatura, humedad, DHT22, SHT31]

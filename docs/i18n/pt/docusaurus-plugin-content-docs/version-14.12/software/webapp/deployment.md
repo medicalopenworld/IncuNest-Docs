@@ -1,7 +1,7 @@
 ---
 id: webapp-deployment
 title: Despliegue da Web App
-sidebar_label: Despliegue
+sidebar_label: Implantação
 sidebar_position: 3
 description: Guia de implantação da aplicação web do IncuNest
 keywords: [despliegue, SPIFFS, build, producción]

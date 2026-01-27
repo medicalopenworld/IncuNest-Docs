@@ -1,7 +1,7 @@
 ---
 id: configuration
 title: Configuración
-sidebar_label: Configuración
+sidebar_label: Configuração
 sidebar_position: 2
 description: Guía de configuración avanzada de IncuNest
 keywords: [configuración, parámetros, ajustes]

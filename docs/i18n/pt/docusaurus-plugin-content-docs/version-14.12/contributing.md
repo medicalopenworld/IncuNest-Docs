@@ -1,7 +1,7 @@
 ---
 id: contributing
 title: Guía de Contribución
-sidebar_label: Contribuir
+sidebar_label: Contribuições
 sidebar_position: 10
 description: Cómo contribuir al proyecto IncuNest
 keywords: [contribuir, desarrollo, comunidad, open source]
