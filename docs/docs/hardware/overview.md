@@ -28,6 +28,7 @@ graph TB
     
     VREG5 --> ESP32[ESP32-WROOM-32]
     VREG3 --> ESP32
+    ESP32 --> CONN[Conectores]
     
     PSU --> HEATER[Calefactor 100W]
     PSU --> FAN[Ventilador 12V]
@@ -54,6 +55,7 @@ graph TB
     style VREG5 fill:#fff4cc
     style VREG3 fill:#fff4cc
     style ESP32 fill:#cce6ff
+    style CONN fill:#cce6ff
     style HEATER fill:#ffccff
     style FAN fill:#ffccff
     style HUMID fill:#ffccff
