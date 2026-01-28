@@ -20,10 +20,18 @@ El pipeline de CI/CD automatiza:
 
 ```mermaid
 graph LR
-    PUSH[Push/PR] --> BUILD[Build]
-    BUILD --> TEST[Test]
-    TEST --> LINT[Lint]
-    LINT --> RELEASE[Release]
+    PUSH([🚀 Push/PR]) --> BUILD[🔨 Build]
+    BUILD --> TEST[🧪 Test]
+    TEST --> LINT[✨ Lint]
+    LINT --> RELEASE((📦 Release))
+    
+    classDef trigger fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef process fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef output fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    
+    class PUSH trigger
+    class BUILD,TEST,LINT process
+    class RELEASE output
 ```
 
 ## GitHub Actions

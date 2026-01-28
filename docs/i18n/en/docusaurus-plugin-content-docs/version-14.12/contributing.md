@@ -152,16 +152,28 @@ For hardware contributions:
 All contributions go through review:
 
 ```mermaid
-flowchart LR
-    A[PR Creado] --> B[CI/CD Tests]
-    B --> C{Tests Pasan?}
-    C -->|No| D[Corregir]
+graph LR
+    A([🚀 PR Created]) --> B[🔄 CI/CD Tests]
+    B --> C{Tests Pass?}
+    C -->|❌ No| D[🔧 Fix]
     D --> B
-    C -->|Sí| E[Revisión de Código]
-    E --> F{Aprobado?}
-    F -->|No| G[Solicitar Cambios]
+    C -->|✅ Yes| E[👀 Code Review]
+    E --> F{Approved?}
+    F -->|❌ No| G[📝 Request Changes]
     G --> D
-    F -->|Sí| H[Merge]
+    F -->|✅ Yes| H((✓ Merge))
+    
+    classDef start fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef process fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef decision fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef action fill:#f8d7da,stroke:#dc3545,stroke-width:2px
+    classDef success fill:#28a745,stroke:#155724,stroke-width:2px,color:#fff
+    
+    class A start
+    class B,E process
+    class C,F decision
+    class D,G action
+    class H success
 ```
 
 ### Review Criteria

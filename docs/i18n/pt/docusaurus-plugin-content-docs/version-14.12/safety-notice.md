@@ -72,18 +72,34 @@ Se você planeja usar o IncuNest em um ambiente clínico, **DEVE**:
 IncuNest implementa um sistema de alarme multinível:
 
 ```mermaid
-flowchart TD
-    A[Monitoreo Continuo] --> B{¿Parámetro fuera de rango?}
-    B -->|Sí| C{Nivel de Severidad}
-    B -->|No| A
-    C -->|Bajo| D[Alarma Visual - Amarillo]
-    C -->|Medio| E[Alarma Visual + Sonora]
-    C -->|Alto| F[Alarma + Acción Correctiva]
-    C -->|Crítico| G[Alarma + Apagado de Emergencia]
+graph TD
+    A([🔍 Monitoramento Contínuo]) --> B{Parâmetro fora da faixa?}
+    B -->|✅ Não| A
+    B -->|⚠️ Sim| C{Nível de Severidade}
+    
+    C -->|🟡 Baixo| D[Alarme Visual - Amarelo]
+    C -->|🟠 Médio| E[Alarme Visual + Sonoro]
+    C -->|🔴 Alto| F[Alarme + Ação Corretiva]
+    C -->|⛔ Crítico| G[Alarme + Desligamento de Emergência]
+    
     D --> A
     E --> A
     F --> A
-    G --> H[Requiere Reset Manual]
+    G --> H((🔧 Requer Reset Manual))
+    
+    classDef monitor fill:#e2e3e5,stroke:#6c757d,stroke-width:2px
+    classDef decision fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef low fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef medium fill:#ffe5b4,stroke:#fd7e14,stroke-width:2px
+    classDef high fill:#f8d7da,stroke:#dc3545,stroke-width:2px
+    classDef critical fill:#dc3545,stroke:#721c24,stroke-width:2px,color:#fff
+    
+    class A monitor
+    class B,C decision
+    class D low
+    class E medium
+    class F high
+    class G,H critical
 ```
 
 ### Níveis de alarme
@@ -99,22 +115,54 @@ flowchart TD
 
 ### Temperatura
 
-```
-┌──────────────────────────────────────────────────────┐
-│ ZONA DE PELIGRO (FRÍO)  │ ZONA SEGURA │ ZONA PELIGRO │
-│        < 25°C           │  25°C - 37°C │    > 38°C    │
-│      ⚠️ ALARMA          │      ✅      │  🛑 CRÍTICO  │
-└──────────────────────────────────────────────────────┘
+```mermaid
+graph LR
+    subgraph danger1 [⚠️ ZONA DE PERIGO - FRIO]
+        A["< 25°C<br/>ALARME"]
+    end
+    
+    subgraph safe [✅ ZONA SEGURA]
+        B["25°C - 37°C<br/>OPERAÇÃO NORMAL"]
+    end
+    
+    subgraph danger2 [🛑 ZONA DE PERIGO - CALOR]
+        C["> 38°C<br/>CRÍTICO"]
+    end
+    
+    A --> B --> C
+    
+    classDef danger fill:#f8d7da,stroke:#dc3545,stroke-width:2px
+    classDef safe fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef critical fill:#dc3545,stroke:#721c24,stroke-width:2px,color:#fff
+    
+    class A danger
+    class B safe
+    class C critical
 ```
 
 ### Umidade relativa
 
-```
-┌──────────────────────────────────────────────────────┐
-│ BAJO  │     ZONA SEGURA      │        ALTO          │
-│ < 40% │      40% - 80%       │        > 85%         │
-│  ⚠️   │         ✅           │         ⚠️           │
-└──────────────────────────────────────────────────────┘
+```mermaid
+graph LR
+    subgraph low [⚠️ BAIXO]
+        A["< 40%<br/>Aviso"]
+    end
+    
+    subgraph optimal [✅ ZONA SEGURA]
+        B["40% - 80%<br/>ÓTIMO"]
+    end
+    
+    subgraph high [⚠️ ALTO]
+        C["> 85%<br/>Aviso"]
+    end
+    
+    A --> B --> C
+    
+    classDef warning fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef safe fill:#d4edda,stroke:#28a745,stroke-width:2px
+    
+    class A,C warning
+    class B safe
 ```
 
 ## Manutenção de segurança
