@@ -21,7 +21,7 @@ O hardware IncuNest foi projetado com os seguintes princípios:
 
 ```mermaid
 graph TB
-    AC[AC 110-220V] --> PSU[Fuente 12V/10A]
+    AC[AC 110-220V] --> PSU[Fonte 12V/10A]
     PSU --> VREG5[Regulador 5V]
     PSU --> VREG3[Regulador 3.3V]
     
@@ -29,13 +29,13 @@ graph TB
     VREG3 --> TEMP1
     VREG3 --> TEMP2
     
-    PSU --> HEATER[Calefactor 100W]
+    PSU --> HEATER[Aquecedor 100W]
     PSU --> FAN[Ventilador 12V]
     PSU --> HUMID[Humidificador]
     
     TEMP1[DHT22/SHT31] --> ESP32
     TEMP2[DS18B20] --> ESP32
-    WEIGHT[Celda de Carga] --> ESP32
+    WEIGHT[Célula de Carga] --> ESP32
     
     ESP32 --> HEATER
     ESP32 --> FAN
@@ -43,9 +43,9 @@ graph TB
     ESP32 --> BUZ[Buzzer]
     
     ESP32 <--> LCD[LCD 20x4]
-    ESP32 <--> TFT[TFT 3.5 pulgadas]
-    ESP32 --> LED[LEDs Estado]
-    BTN[Botones] --> ESP32
+    ESP32 <--> TFT[TFT 3.5 polegadas]
+    ESP32 --> LED[LEDs de Status]
+    BTN[Botões] --> ESP32
     
     style AC fill:#ffcccc
     style PSU fill:#ffe6cc
