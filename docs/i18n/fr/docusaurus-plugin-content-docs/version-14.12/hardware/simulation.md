@@ -47,6 +47,7 @@ Voici l'analyse de compatibilité entre les composants du [BOM IncuNest](./assem
 | DHT22 | Capteur temp/humidité (backup) | `wokwi-dht22` |
 | DS18B20 | Capteur température de peau | `wokwi-ds18b20` |
 | HX711 + Cellule de charge | Mesure de poids | `wokwi-hx711` |
+| Module carte SD | Enregistrement de données | `wokwi-microsd-card` |
 | LCD 20x4 I2C | Écran basique | `wokwi-lcd2004` |
 | Buzzer | Alarme sonore | `wokwi-buzzer` |
 | LEDs RGB | Indicateurs d'état | `wokwi-rgb-led` |
@@ -62,8 +63,10 @@ Voici l'analyse de compatibilité entre les composants du [BOM IncuNest](./assem
 |-----------|---------------------------|-------------------|-------|
 | DS3231 RTC | Horloge temps réel | Utiliser bibliothèque DS3231 | Compatible via I2C, pas de composant dédié |
 | TFT ILI9488 | Écran avancé | `wokwi-ili9341` | ILI9341 compatible, résolution différente |
+| Touch XPT2046 | Écran tactile | `wokwi-ili9341` | Inclus dans l'écran ILI9341 |
 | MOSFET IRLZ44N | Contrôle PWM actionneurs | Simuler avec logique numérique | Pas de composant physique, simuler le comportement |
 | Ventilateur 12V | Circulation d'air | `wokwi-led` comme indicateur | Utiliser LED pour visualiser l'état |
+| Transistor 2N2222A | Contrôle de signaux | Simuler avec logique numérique | Pas de composant physique en simulation |
 
 ### Composants Non Supportés ❌
 
@@ -72,6 +75,8 @@ Voici l'analyse de compatibilité entre les composants du [BOM IncuNest](./assem
 | SHT31 | Capteur temp/humidité principal | Utiliser DHT22 comme substitut |
 | Résistance PTC 100W | Élément chauffant | Simuler avec variable dans le code |
 | Humidificateur ultrasonique | Contrôle d'humidité | Simuler avec variable dans le code |
+| KSD301 | Thermostat de sécurité 45°C | Simuler la logique de protection dans le code |
+| Diode SS34 | Protection de circuit | Non nécessaire en simulation |
 | Régulateurs AMS1117 | Régulation de tension | Non nécessaire en simulation |
 | Alimentation | Alimentation du système | Non nécessaire en simulation |
 

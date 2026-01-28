@@ -47,6 +47,7 @@ Abaixo está a análise de compatibilidade entre os componentes do [BOM do IncuN
 | DHT22 | Sensor temp/umidade (backup) | `wokwi-dht22` |
 | DS18B20 | Sensor temperatura de pele | `wokwi-ds18b20` |
 | HX711 + Célula de carga | Medição de peso | `wokwi-hx711` |
+| Módulo cartão SD | Registro de dados | `wokwi-microsd-card` |
 | LCD 20x4 I2C | Display básico | `wokwi-lcd2004` |
 | Buzzer | Alarme sonoro | `wokwi-buzzer` |
 | LEDs RGB | Indicadores de estado | `wokwi-rgb-led` |
@@ -62,8 +63,10 @@ Abaixo está a análise de compatibilidade entre os componentes do [BOM do IncuN
 |------------|-----------------|-------------------|-------|
 | DS3231 RTC | Relógio em tempo real | Usar biblioteca DS3231 | Compatível via I2C, sem componente dedicado |
 | TFT ILI9488 | Display avançado | `wokwi-ili9341` | ILI9341 é compatível, resolução diferente |
+| Touch XPT2046 | Tela sensível ao toque | `wokwi-ili9341` | Incluído no display ILI9341 |
 | MOSFET IRLZ44N | Controle PWM de atuadores | Simular com lógica digital | Sem componente físico, simular comportamento |
 | Ventilador 12V | Circulação de ar | `wokwi-led` como indicador | Usar LED para visualizar estado |
+| Transistor 2N2222A | Controle de sinais | Simular com lógica digital | Sem componente físico em simulação |
 
 ### Componentes Não Suportados ❌
 
@@ -72,6 +75,8 @@ Abaixo está a análise de compatibilidade entre os componentes do [BOM do IncuN
 | SHT31 | Sensor temp/umidade principal | Usar DHT22 como substituto |
 | Resistência PTC 100W | Elemento aquecedor | Simular com variável no código |
 | Umidificador ultrassônico | Controle de umidade | Simular com variável no código |
+| KSD301 | Termostato de segurança 45°C | Simular lógica de proteção no código |
+| Diodo SS34 | Proteção de circuito | Não necessário em simulação |
 | Reguladores AMS1117 | Regulação de tensão | Não necessário em simulação |
 | Fonte de alimentação | Energia do sistema | Não necessário em simulação |
 

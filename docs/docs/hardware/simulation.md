@@ -47,6 +47,7 @@ A continuación se presenta el análisis de compatibilidad entre los componentes
 | DHT22 | Sensor temp/humedad (respaldo) | `wokwi-dht22` |
 | DS18B20 | Sensor temperatura de piel | `wokwi-ds18b20` |
 | HX711 + Celda de carga | Medición de peso | `wokwi-hx711` |
+| Módulo SD Card | Registro de datos | `wokwi-microsd-card` |
 | LCD 20x4 I2C | Display básico | `wokwi-lcd2004` |
 | Buzzer | Alarma sonora | `wokwi-buzzer` |
 | LEDs RGB | Indicadores de estado | `wokwi-rgb-led` |
@@ -62,8 +63,10 @@ A continuación se presenta el análisis de compatibilidad entre los componentes
 |------------|-----------------|----------------------|-------|
 | DS3231 RTC | Reloj tiempo real | Usar librería DS3231 | Compatible vía I2C, sin componente dedicado |
 | TFT ILI9488 | Display avanzado | `wokwi-ili9341` | ILI9341 es compatible, diferente resolución |
+| Touch XPT2046 | Pantalla táctil | `wokwi-ili9341` | Incluido en display ILI9341 |
 | MOSFET IRLZ44N | Control PWM de actuadores | Simular con lógica digital | Sin componente físico, simular comportamiento |
 | Ventilador 12V | Circulación de aire | `wokwi-led` como indicador | Usar LED para visualizar estado |
+| Transistor 2N2222A | Control de señales | Simular con lógica digital | Sin componente físico en simulación |
 
 ### Componentes No Soportados ❌
 
@@ -72,6 +75,8 @@ A continuación se presenta el análisis de compatibilidad entre los componentes
 | SHT31 | Sensor temp/humedad primario | Usar DHT22 como sustituto |
 | Resistencia PTC 100W | Elemento calefactor | Simular con variable en código |
 | Humidificador ultrasónico | Control de humedad | Simular con variable en código |
+| KSD301 | Termostato de seguridad 45°C | Simular lógica de protección en código |
+| Diodo SS34 | Protección de circuito | No necesario en simulación |
 | Reguladores AMS1117 | Regulación de voltaje | No necesario en simulación |
 | Fuente de alimentación | Energía del sistema | No necesario en simulación |
 
