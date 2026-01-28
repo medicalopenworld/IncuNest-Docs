@@ -191,6 +191,16 @@ const sidebars: SidebarsConfig = {
       }),
     },
     {
+      type: 'doc',
+      id: 'hardware/simulation',
+      label: localize({
+        es: 'Simulación',
+        en: 'Simulation',
+        pt: 'Simulação',
+        fr: 'Simulation',
+      }),
+    },
+    {
       type: 'category',
       label: localize({
         es: 'Componentes Electrónicos',
