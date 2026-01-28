@@ -21,47 +21,49 @@ El hardware de IncuNest está diseñado con los siguientes principios:
 ## Diagrama del Sistema
 
 ```mermaid
-flowchart TB
-    subgraph POWER["Alimentación"]
-        AC[AC 110-220V]
-        PSU[Fuente 12V/10A]
-        VREG5[Regulador 5V]
-        VREG3[Regulador 3.3V]
-    end
+graph TB
+    AC[AC 110-220V] --> PSU[Fuente 12V/10A]
+    PSU --> VREG5[Regulador 5V]
+    PSU --> VREG3[Regulador 3.3V]
     
-    subgraph MAIN["Placa Principal"]
-        ESP32[ESP32-WROOM-32]
-        CONN[Conectores]
-    end
+    VREG5 --> ESP32[ESP32-WROOM-32]
+    VREG3 --> TEMP1
+    VREG3 --> TEMP2
     
-    subgraph SENSORS["Sensores"]
-        TEMP1[DHT22/SHT31]
-        TEMP2[DS18B20]
-        WEIGHT[Celda de Carga]
-    end
+    PSU --> HEATER[Calefactor 100W]
+    PSU --> FAN[Ventilador 12V]
+    PSU --> HUMID[Humidificador]
     
-    subgraph ACTUATORS["Actuadores"]
-        HEATER[Calefactor 100W]
-        FAN[Ventilador 12V]
-        HUMID[Humidificador]
-    end
+    TEMP1[DHT22/SHT31] --> ESP32
+    TEMP2[DS18B20] --> ESP32
+    WEIGHT[Celda de Carga] --> ESP32
     
-    subgraph DISPLAY["Interfaz"]
-        LCD[LCD 20x4]
-        TFT[TFT 3.5" opcional]
-        LED[LEDs Estado]
-        BTN[Botones]
-        BUZ[Buzzer]
-    end
+    ESP32 --> HEATER
+    ESP32 --> FAN
+    ESP32 --> HUMID
+    ESP32 --> BUZ[Buzzer]
     
-    AC --> PSU
-    PSU --> VREG5 --> ESP32
-    PSU --> VREG3
-    PSU --> ACTUATORS
+    ESP32 <--> LCD[LCD 20x4]
+    ESP32 <--> TFT[TFT 3.5 pulgadas]
+    ESP32 --> LED[LEDs Estado]
+    BTN[Botones] --> ESP32
     
-    ESP32 <--> SENSORS
-    ESP32 --> ACTUATORS
-    ESP32 <--> DISPLAY
+    style AC fill:#ffcccc
+    style PSU fill:#ffe6cc
+    style VREG5 fill:#fff4cc
+    style VREG3 fill:#fff4cc
+    style ESP32 fill:#cce6ff
+    style HEATER fill:#ffccff
+    style FAN fill:#ffccff
+    style HUMID fill:#ffccff
+    style BUZ fill:#ffccff
+    style TEMP1 fill:#ccffcc
+    style TEMP2 fill:#ccffcc
+    style WEIGHT fill:#ccffcc
+    style LCD fill:#f0e6ff
+    style TFT fill:#f0e6ff
+    style LED fill:#f0e6ff
+    style BTN fill:#f0e6ff
 ```
 
 ## Componentes Principales
