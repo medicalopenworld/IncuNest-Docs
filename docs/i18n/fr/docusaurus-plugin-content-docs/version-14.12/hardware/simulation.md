@@ -108,7 +108,7 @@ incunest-simulation/
   "connections": [
     ["esp:GND.1", "dht:GND", "black", ["v:20"]],
     ["esp:3V3", "dht:VCC", "red", ["v:10"]],
-    ["esp:D4", "dht:SDA", "green", ["h:10"]],
+    ["esp:D4", "dht:DATA", "green", ["h:10"]],
     ["esp:GND.1", "ds18:GND", "black", ["v:30"]],
     ["esp:3V3", "ds18:VCC", "red", ["v:15"]],
     ["esp:D5", "ds18:DQ", "yellow", ["h:15"]],
