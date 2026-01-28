@@ -27,8 +27,8 @@ graph TB
     PSU --> VREG3[Regulador 3.3V]
     
     VREG5 --> ESP32[ESP32-WROOM-32]
-    VREG3 --> ESP32
-    ESP32 --> CONN[Conectores]
+    VREG3 --> TEMP1
+    VREG3 --> TEMP2
     
     PSU --> HEATER[Calefactor 100W]
     PSU --> FAN[Ventilador 12V]
@@ -43,10 +43,8 @@ graph TB
     ESP32 --> HUMID
     ESP32 --> BUZ[Buzzer]
     
-    ESP32 --> LCD[LCD 20x4]
-    LCD --> ESP32
-    ESP32 --> TFT[TFT 3.5 pulgadas]
-    TFT --> ESP32
+    ESP32 <--> LCD[LCD 20x4]
+    ESP32 <--> TFT[TFT 3.5 pulgadas]
     ESP32 --> LED[LEDs Estado]
     BTN[Botones] --> ESP32
     
@@ -55,7 +53,6 @@ graph TB
     style VREG5 fill:#fff4cc
     style VREG3 fill:#fff4cc
     style ESP32 fill:#cce6ff
-    style CONN fill:#cce6ff
     style HEATER fill:#ffccff
     style FAN fill:#ffccff
     style HUMID fill:#ffccff
