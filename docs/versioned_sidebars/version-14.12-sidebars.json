@@ -31,6 +31,7 @@
   ],
   "hardwareSidebar": [
     "hardware/overview",
+    "hardware/simulation",
     {
       "type": "category",
       "label": "Componentes Electrónicos",
