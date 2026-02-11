@@ -16,56 +16,76 @@ IncuNest está diseñado siguiendo principios de **modularidad**, **seguridad** 
 ## Diagrama de Bloques del Sistema
 
 ```mermaid
-flowchart TB
-    subgraph POWER["⚡ Alimentación"]
-        AC[AC 110-220V]
-        PSU[Fuente 12V]
-        REG[Reguladores]
-        UPS[UPS Backup]
+graph TB
+    subgraph POWER ["⚡ Alimentación"]
+        direction LR
+        AC[🔌 AC 110-220V]
+        PSU[(Fuente 12V)]
+        REG{{Reguladores}}
+        UPS[(UPS Backup)]
     end
     
-    subgraph CONTROL["🧠 Control Central"]
-        ESP32[ESP32 MCU]
-        FLASH[Flash/SPIFFS]
+    subgraph CONTROL ["🧠 Control Central"]
+        direction TB
+        ESP32([ESP32 MCU])
+        FLASH[(Flash/SPIFFS)]
         RTC[RTC DS3231]
     end
     
-    subgraph SENSORS["📊 Sensores"]
-        TEMP1[Temp. Ambiente]
-        TEMP2[Temp. Piel]
-        HUM[Humedad]
-        WEIGHT[Peso]
+    subgraph SENSORS ["📊 Sensores"]
+        direction LR
+        TEMP1[🌡️ Temp. Ambiente]
+        TEMP2[🌡️ Temp. Piel]
+        HUM[💧 Humedad]
+        WEIGHT[⚖️ Peso]
     end
     
-    subgraph ACTUATORS["⚙️ Actuadores"]
-        HEATER[Calefactor]
-        FAN[Ventilador]
-        HUMID[Humidificador]
-        BUZZER[Buzzer]
+    subgraph ACTUATORS ["⚙️ Actuadores"]
+        direction LR
+        HEATER[🔥 Calefactor]
+        FAN[💨 Ventilador]
+        HUMID[💦 Humidificador]
+        BUZZER[🔔 Buzzer]
     end
     
-    subgraph UI["🖥️ Interfaz"]
-        LCD[Display LCD/TFT]
-        LEDS[LEDs Estado]
-        BUTTONS[Botones]
+    subgraph UI ["🖥️ Interfaz"]
+        direction LR
+        LCD[[Display LCD/TFT]]
+        LEDS[💡 LEDs Estado]
+        BUTTONS[🔘 Botones]
     end
     
-    subgraph COMM["📡 Comunicación"]
-        WIFI[WiFi]
-        API[REST API]
-        WS[WebSocket]
-        MQTT[MQTT]
+    subgraph COMM ["📡 Comunicación"]
+        direction LR
+        WIFI{{WiFi}}
+        API>REST API]
+        WS>WebSocket]
+        MQTT>MQTT]
     end
     
     AC --> PSU --> REG --> ESP32
-    UPS -.-> REG
+    UPS -.->|backup| REG
     
-    SENSORS --> ESP32
-    ESP32 --> ACTUATORS
-    ESP32 --> UI
-    ESP32 <--> COMM
-    ESP32 <--> FLASH
-    RTC --> ESP32
+    SENSORS -->|datos| ESP32
+    ESP32 -->|control| ACTUATORS
+    ESP32 -->|display| UI
+    ESP32 <-->|red| COMM
+    ESP32 <-->|storage| FLASH
+    RTC -->|tiempo| ESP32
+    
+    classDef power fill:#ffcccc,stroke:#dc3545,stroke-width:2px
+    classDef control fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef sensors fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef actuators fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef ui fill:#e2d5f1,stroke:#6f42c1,stroke-width:2px
+    classDef comm fill:#d1ecf1,stroke:#17a2b8,stroke-width:2px
+    
+    class AC,PSU,REG,UPS power
+    class ESP32,FLASH,RTC control
+    class TEMP1,TEMP2,HUM,WEIGHT sensors
+    class HEATER,FAN,HUMID,BUZZER actuators
+    class LCD,LEDS,BUTTONS ui
+    class WIFI,API,WS,MQTT comm
 ```
 
 ## Capas del Sistema
@@ -125,25 +145,34 @@ Interfaces disponibles:
 
 ```mermaid
 sequenceDiagram
-    participant S as Sensores
-    participant C as Controlador
-    participant A as Actuadores
-    participant UI as Interfaz
-    participant N as Red
+    participant S as 📊 Sensores
+    participant C as ⚙️ Controlador
+    participant A as 🔧 Actuadores
+    participant UI as 🖥️ Interfaz
+    participant N as 📡 Red
     
-    loop Cada 100ms
-        S->>C: Datos de sensores
-        C->>C: Procesar PID
-        C->>A: Comandos de control
+    rect rgb(255, 248, 220)
+        Note over S,A: Loop de Control Rápido
+        loop Cada 100ms
+            S->>C: Datos de sensores
+            C->>C: Procesar PID
+            C->>A: Comandos de control
+        end
     end
     
-    loop Cada 1s
-        C->>UI: Actualizar display
-        C->>N: Enviar telemetría
+    rect rgb(220, 255, 220)
+        Note over C,N: Loop de Comunicación
+        loop Cada 1s
+            C->>UI: Actualizar display
+            C->>N: Enviar telemetría
+        end
     end
     
-    N-->>C: Comandos remotos
-    UI-->>C: Input de usuario
+    rect rgb(240, 248, 255)
+        Note over N,C: Interacción Externa
+        N-->>C: Comandos remotos
+        UI-->>C: Input de usuario
+    end
 ```
 
 ## Principios de Diseño
@@ -172,24 +201,27 @@ Cada módulo puede:
 
 ```mermaid
 stateDiagram-v2
-    [*] --> INIT: Power On
-    INIT --> SELFTEST: Inicialización OK
-    INIT --> ERROR: Fallo de inicio
+    [*] --> INIT: ⚡ Power On
+    INIT --> SELFTEST: ✅ Inicialización OK
+    INIT --> ERROR: ❌ Fallo de inicio
     
-    SELFTEST --> STANDBY: Tests OK
-    SELFTEST --> ERROR: Fallo de test
+    SELFTEST --> STANDBY: ✅ Tests OK
+    SELFTEST --> ERROR: ❌ Fallo de test
     
-    STANDBY --> HEATING: Activar
-    HEATING --> OPERATING: Temp. alcanzada
+    state "🔥 Operación Activa" as active {
+        STANDBY --> HEATING: ▶️ Activar
+        HEATING --> OPERATING: 🌡️ Temp. alcanzada
+        OPERATING --> STANDBY: ⏹️ Desactivar
+    }
     
-    OPERATING --> STANDBY: Desactivar
-    OPERATING --> ALARM: Parámetro fuera de rango
+    state "🚨 Estados de Alerta" as alert {
+        OPERATING --> ALARM: ⚠️ Parámetro fuera de rango
+        ALARM --> OPERATING: ✅ Alarma resuelta
+        ALARM --> EMERGENCY: 🛑 Condición crítica
+    }
     
-    ALARM --> OPERATING: Alarma resuelta
-    ALARM --> EMERGENCY: Condición crítica
-    
-    EMERGENCY --> [*]: Apagado seguro
-    ERROR --> [*]: Requiere servicio
+    EMERGENCY --> [*]: 🔧 Apagado seguro
+    ERROR --> [*]: 🔧 Requiere servicio
 ```
 
 ### Descripción de Estados

@@ -457,21 +457,54 @@ public:
 
 ```mermaid
 graph TD
-    SP[Setpoint] --> SUM((Σ))
-    TEMP[Sensor Temp] --> SUM
-    SUM --> |Error| PID[Controlador PID]
-    PID --> |Potencia| HEATER[Calefactor PTC]
-    HEATER --> |Calor| CHAMBER[Cámara]
+    subgraph entrada [📥 Entrada]
+        SP([🎯 Setpoint])
+        TEMP([🌡️ Sensor Temp])
+    end
+    
+    subgraph controlador [⚙️ Controlador PID]
+        SUM((Σ))
+        PID{PID}
+        P_TERM[P - Proporcional]
+        I_TERM[I - Integral]
+        D_TERM[D - Derivativo]
+    end
+    
+    subgraph salida [📤 Salida]
+        HEATER[[🔥 Calefactor PTC]]
+        CHAMBER[(Cámara)]
+    end
+    
+    subgraph seguridad [🛡️ Seguridad]
+        LIMIT{> 38°C?}
+        SHUTDOWN[⛔ Apagar Calefactor]
+    end
+    
+    SP --> SUM
+    TEMP --> SUM
+    SUM -->|Error| PID
+    
+    PID --> P_TERM
+    PID --> I_TERM
+    PID --> D_TERM
+    
+    PID -->|Potencia| HEATER
+    HEATER -->|Calor| CHAMBER
     CHAMBER --> TEMP
     
-    PID --> |P| P_TERM[Término P]
-    PID --> |I| I_TERM[Término I]
-    PID --> |D| D_TERM[Término D]
+    TEMP --> LIMIT
+    LIMIT -->|✅ No| PID
+    LIMIT -->|⚠️ Sí| SHUTDOWN
     
-    subgraph Seguridad
-        TEMP --> LIMIT{> 38°C?}
-        LIMIT --> |Sí| SHUTDOWN[Apagar Calefactor]
-    end
+    classDef input fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef controller fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef output fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef safety fill:#f8d7da,stroke:#dc3545,stroke-width:2px
+    
+    class SP,TEMP input
+    class SUM,PID,P_TERM,I_TERM,D_TERM controller
+    class HEATER,CHAMBER output
+    class LIMIT,SHUTDOWN safety
 ```
 
 ## Próximas Secciones

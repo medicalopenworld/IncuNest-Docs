@@ -22,48 +22,74 @@ El hardware de IncuNest está diseñado con los siguientes principios:
 
 ```mermaid
 graph TB
-    AC[AC 110-220V] --> PSU[Fuente 12V/10A]
-    PSU --> VREG5[Regulador 5V]
-    PSU --> VREG3[Regulador 3.3V]
+    subgraph power [⚡ Alimentación]
+        AC[🔌 AC 110-220V]
+        PSU[(Fuente 12V/10A)]
+        VREG5{{Regulador 5V}}
+        VREG3{{Regulador 3.3V}}
+    end
     
-    VREG5 --> ESP32[ESP32-WROOM-32]
+    subgraph sensors [📊 Sensores]
+        TEMP1[🌡️ DHT22/SHT31]
+        TEMP2[🌡️ DS18B20]
+        WEIGHT[⚖️ Celda de Carga]
+    end
+    
+    subgraph mcu [🧠 Controlador]
+        ESP32([ESP32-WROOM-32])
+    end
+    
+    subgraph actuators [⚙️ Actuadores]
+        HEATER[[🔥 Calefactor 100W]]
+        FAN[[💨 Ventilador 12V]]
+        HUMID[[💦 Humidificador]]
+        BUZ[🔔 Buzzer]
+    end
+    
+    subgraph ui [🖥️ Interfaz de Usuario]
+        LCD[[LCD 20x4]]
+        TFT[[TFT 3.5"]]
+        LED[💡 LEDs Estado]
+        BTN[🔘 Botones]
+    end
+    
+    AC --> PSU
+    PSU --> VREG5
+    PSU --> VREG3
+    
+    VREG5 --> ESP32
     VREG3 --> TEMP1
     VREG3 --> TEMP2
     
-    PSU --> HEATER[Calefactor 100W]
-    PSU --> FAN[Ventilador 12V]
-    PSU --> HUMID[Humidificador]
+    PSU --> HEATER
+    PSU --> FAN
+    PSU --> HUMID
     
-    TEMP1[DHT22/SHT31] --> ESP32
-    TEMP2[DS18B20] --> ESP32
-    WEIGHT[Celda de Carga] --> ESP32
+    TEMP1 --> ESP32
+    TEMP2 --> ESP32
+    WEIGHT --> ESP32
     
     ESP32 --> HEATER
     ESP32 --> FAN
     ESP32 --> HUMID
-    ESP32 --> BUZ[Buzzer]
+    ESP32 --> BUZ
     
-    ESP32 <--> LCD[LCD 20x4]
-    ESP32 <--> TFT[TFT 3.5 pulgadas]
-    ESP32 --> LED[LEDs Estado]
-    BTN[Botones] --> ESP32
+    ESP32 <--> LCD
+    ESP32 <--> TFT
+    ESP32 --> LED
+    BTN --> ESP32
     
-    style AC fill:#ffcccc
-    style PSU fill:#ffe6cc
-    style VREG5 fill:#fff4cc
-    style VREG3 fill:#fff4cc
-    style ESP32 fill:#cce6ff
-    style HEATER fill:#ffccff
-    style FAN fill:#ffccff
-    style HUMID fill:#ffccff
-    style BUZ fill:#ffccff
-    style TEMP1 fill:#ccffcc
-    style TEMP2 fill:#ccffcc
-    style WEIGHT fill:#ccffcc
-    style LCD fill:#f0e6ff
-    style TFT fill:#f0e6ff
-    style LED fill:#f0e6ff
-    style BTN fill:#f0e6ff
+    classDef power fill:#ffcccc,stroke:#dc3545,stroke-width:2px
+    classDef sensors fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef mcu fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef actuators fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef ui fill:#e2d5f1,stroke:#6f42c1,stroke-width:2px
+    
+    class AC,PSU,VREG5,VREG3 power
+    class TEMP1,TEMP2,WEIGHT sensors
+    class ESP32 mcu
+    class HEATER,FAN,HUMID,BUZ actuators
+    class LCD,TFT,LED,BTN ui
 ```
 
 ## Componentes Principales
@@ -105,27 +131,47 @@ graph TB
 
 ## Diagrama de Bloques Eléctrico
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      FUENTE DE ALIMENTACIÓN                      │
-├──────────────────┬──────────────────┬──────────────────────────┤
-│     12V/10A      │     5V/3A        │       3.3V/1A            │
-│    (Actuadores)  │   (Lógica 5V)    │    (ESP32, Sensores)     │
-└────────┬─────────┴────────┬─────────┴──────────┬───────────────┘
-         │                  │                     │
-         ▼                  ▼                     ▼
-┌────────────────┐  ┌──────────────┐      ┌──────────────┐
-│   CALEFACTOR   │  │    BUZZER    │      │    ESP32     │
-│   100W PWM     │  │    ALARMA    │      │   MCU        │
-└────────────────┘  └──────────────┘      └──────┬───────┘
-         │                                        │
-         │              ┌─────────────────────────┼─────────────┐
-         │              │                         │             │
-         ▼              ▼                         ▼             ▼
-┌────────────────┐ ┌────────────┐         ┌────────────┐ ┌────────────┐
-│  VENTILADOR    │ │   DISPLAY  │         │  SENSORES  │ │   WiFi     │
-│   12V PWM      │ │  LCD/TFT   │         │  I2C/1Wire │ │  Integrado │
-└────────────────┘ └────────────┘         └────────────┘ └────────────┘
+```mermaid
+graph TB
+    subgraph psu [⚡ Fuente de Alimentación]
+        direction LR
+        V12[12V/10A<br/>Actuadores]
+        V5[5V/3A<br/>Lógica 5V]
+        V33[3.3V/1A<br/>ESP32, Sensores]
+    end
+    
+    subgraph components [🔧 Componentes del Sistema]
+        CALEFACTOR[[🔥 Calefactor<br/>100W PWM]]
+        BUZZER[🔔 Buzzer<br/>Alarma]
+        ESP[🧠 ESP32<br/>MCU]
+        VENTILADOR[[💨 Ventilador<br/>12V PWM]]
+        DISPLAY[[🖥️ Display<br/>LCD/TFT]]
+        SENSORES[📊 Sensores<br/>I2C/1Wire]
+        WIFI{{📡 WiFi<br/>Integrado}}
+    end
+    
+    V12 --> CALEFACTOR
+    V12 --> VENTILADOR
+    V5 --> BUZZER
+    V33 --> ESP
+    
+    ESP --> CALEFACTOR
+    ESP --> VENTILADOR
+    ESP --> DISPLAY
+    ESP --> SENSORES
+    ESP --> WIFI
+    
+    classDef power fill:#ffcccc,stroke:#dc3545,stroke-width:2px
+    classDef actuator fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef core fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef sensor fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef comm fill:#d1ecf1,stroke:#17a2b8,stroke-width:2px
+    
+    class V12,V5,V33 power
+    class CALEFACTOR,VENTILADOR,BUZZER actuator
+    class ESP core
+    class DISPLAY,SENSORES sensor
+    class WIFI comm
 ```
 
 ## Especificaciones Eléctricas

@@ -24,8 +24,8 @@ classDiagram
         -AlarmManager alarms
         -NetworkManager network
         -DisplayManager display
-        +init()
-        +loop()
+        +init() void
+        +loop() void
     }
     
     class SensorManager {
@@ -33,8 +33,8 @@ classDiagram
         -TemperatureSensor tempSkin
         -HumiditySensor humidity
         -WaterLevelSensor waterLevel
-        +init()
-        +update()
+        +init() bool
+        +update() void
         +getData() SensorData
     }
     
@@ -42,60 +42,65 @@ classDiagram
         -HeaterController heater
         -FanController fan
         -HumidifierController humidifier
-        +init()
-        +setHeater(power)
-        +setFan(speed)
-        +setHumidifier(state)
+        +init() void
+        +setHeater(power) void
+        +setFan(speed) void
+        +setHumidifier(state) void
     }
     
     class ControlSystem {
         -PIDController tempPID
         -float tempSetpoint
         -float humSetpoint
-        +init()
-        +update(sensorData)
-        +setSetpoints(temp, hum)
+        +init() void
+        +update(sensorData) void
+        +setSetpoints(temp, hum) void
     }
     
     class AlarmManager {
         -vector~Alarm~ activeAlarms
-        +check(sensorData)
-        +raise(code, level)
-        +clear(code)
-        +acknowledge(code)
+        +check(sensorData) void
+        +raise(code, level) void
+        +clear(code) void
+        +acknowledge(code) void
     }
     
-    Application --> SensorManager
-    Application --> ActuatorManager
-    Application --> ControlSystem
-    Application --> AlarmManager
+    Application *-- SensorManager : gestiona
+    Application *-- ActuatorManager : controla
+    Application *-- ControlSystem : coordina
+    Application *-- AlarmManager : monitorea
 ```
 
 ## Máquina de Estados Principal
 
 ```mermaid
 stateDiagram-v2
-    [*] --> BOOT
-    BOOT --> INIT: Hardware OK
-    BOOT --> ERROR: Hardware Fault
+    [*] --> BOOT: ⚡ Power On
     
-    INIT --> SELFTEST: Modules Loaded
-    SELFTEST --> STANDBY: Tests Pass
-    SELFTEST --> ERROR: Tests Fail
+    state "🔄 Inicialización" as init_group {
+        BOOT --> INIT: ✅ Hardware OK
+        BOOT --> ERROR: ❌ Hardware Fault
+        INIT --> SELFTEST: 📦 Modules Loaded
+        SELFTEST --> STANDBY: ✅ Tests Pass
+        SELFTEST --> ERROR: ❌ Tests Fail
+    }
     
-    STANDBY --> PREHEATING: User Start
-    PREHEATING --> OPERATING: Temp Reached
-    PREHEATING --> ALARM: Timeout
+    state "🔥 Operación" as operation_group {
+        STANDBY --> PREHEATING: ▶️ User Start
+        PREHEATING --> OPERATING: 🌡️ Temp Reached
+        PREHEATING --> ALARM: ⏰ Timeout
+        OPERATING --> STANDBY: ⏹️ User Stop
+        OPERATING --> ALARM: ⚠️ Out of Range
+        OPERATING --> PREHEATING: 📉 Temp Drop >2°C
+    }
     
-    OPERATING --> STANDBY: User Stop
-    OPERATING --> ALARM: Out of Range
-    OPERATING --> PREHEATING: Temp Drop >2°C
+    state "🚨 Alertas" as alert_group {
+        ALARM --> OPERATING: ✅ Resolved
+        ALARM --> EMERGENCY: 🛑 Critical
+        EMERGENCY --> STANDBY: 🔄 Manual Reset
+    }
     
-    ALARM --> OPERATING: Resolved
-    ALARM --> EMERGENCY: Critical
-    
-    EMERGENCY --> STANDBY: Manual Reset
-    ERROR --> [*]: Service Required
+    ERROR --> [*]: 🔧 Service Required
 ```
 
 ### Descripción de Estados

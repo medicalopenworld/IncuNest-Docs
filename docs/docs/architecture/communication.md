@@ -25,23 +25,33 @@ IncuNest soporta múltiples protocolos de comunicación para diferentes casos de
 ### Modos de Operación
 
 ```mermaid
-flowchart TB
-    START[Inicio] --> CHECK{¿WiFi configurado?}
-    CHECK -->|No| AP[Modo Access Point]
-    CHECK -->|Sí| CONNECT[Intentar conexión]
+graph TD
+    START([🚀 Inicio]) --> CHECK{¿WiFi configurado?}
+    CHECK -->|❌ No| AP[📡 Modo Access Point]
+    CHECK -->|✅ Sí| CONNECT[🔗 Intentar conexión]
     
     CONNECT --> SUCCESS{¿Conectado?}
-    SUCCESS -->|Sí| STA[Modo Station]
-    SUCCESS -->|No| RETRY{¿Reintentos < 5?}
+    SUCCESS -->|✅ Sí| STA[📶 Modo Station]
+    SUCCESS -->|❌ No| RETRY{¿Reintentos < 5?}
     
-    RETRY -->|Sí| CONNECT
-    RETRY -->|No| AP
+    RETRY -->|✅ Sí| CONNECT
+    RETRY -->|❌ No| AP
     
-    AP --> CONFIG[Portal de configuración]
-    CONFIG --> SAVE[Guardar credenciales]
+    AP --> CONFIG[⚙️ Portal de configuración]
+    CONFIG --> SAVE[(💾 Guardar credenciales)]
     SAVE --> CONNECT
     
-    STA --> OPERATE[Operación normal]
+    STA --> OPERATE((✅ Operación normal))
+    
+    classDef start fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef decision fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef process fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef success fill:#28a745,stroke:#155724,stroke-width:2px,color:#fff
+    
+    class START start
+    class CHECK,SUCCESS,RETRY decision
+    class AP,CONNECT,CONFIG,SAVE,STA process
+    class OPERATE success
 ```
 
 ### Modo Access Point (AP)

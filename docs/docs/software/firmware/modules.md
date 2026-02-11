@@ -15,20 +15,55 @@ El firmware de IncuNest está organizado en módulos independientes que facilita
 
 ```mermaid
 graph TD
-    MAIN[Main Loop] --> SM[SensorManager]
-    MAIN --> CM[ControlManager]
-    MAIN --> AM[AlarmManager]
-    MAIN --> NM[NetworkManager]
-    MAIN --> DM[DisplayManager]
-    MAIN --> CFG[ConfigManager]
+    subgraph core [🎯 Núcleo Principal]
+        MAIN([Main Loop])
+    end
     
-    SM --> SHT[SHT31 Driver]
-    SM --> DS[DS18B20 Driver]
+    subgraph managers [📦 Gestores]
+        SM[📊 SensorManager]
+        CM[⚙️ ControlManager]
+        AM[🚨 AlarmManager]
+        NM[📡 NetworkManager]
+        DM[🖥️ DisplayManager]
+        CFG[(ConfigManager)]
+    end
     
-    CM --> PID[PID Controller]
-    CM --> HD[Heater Driver]
-    CM --> FD[Fan Driver]
-    CM --> HUM[Humidifier Driver]
+    subgraph sensors [🌡️ Drivers de Sensores]
+        SHT[SHT31 Driver]
+        DS[DS18B20 Driver]
+    end
+    
+    subgraph control [🎛️ Sistema de Control]
+        PID{{PID Controller}}
+        HD[Heater Driver]
+        FD[Fan Driver]
+        HUM[Humidifier Driver]
+    end
+    
+    MAIN --> SM
+    MAIN --> CM
+    MAIN --> AM
+    MAIN --> NM
+    MAIN --> DM
+    MAIN --> CFG
+    
+    SM --> SHT
+    SM --> DS
+    
+    CM --> PID
+    CM --> HD
+    CM --> FD
+    CM --> HUM
+    
+    classDef core fill:#e2e3e5,stroke:#6c757d,stroke-width:2px
+    classDef managers fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef sensors fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef control fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    
+    class MAIN core
+    class SM,CM,AM,NM,DM,CFG managers
+    class SHT,DS sensors
+    class PID,HD,FD,HUM control
 ```
 
 ## Módulo: SensorManager

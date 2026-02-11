@@ -14,35 +14,49 @@ keywords: [software, firmware, ESP32, arquitectura]
 El software de IncuNest está compuesto por múltiples capas:
 
 ```mermaid
-flowchart TB
-    subgraph APP["Capa de Aplicación"]
-        WEB[Interfaz Web]
-        API[REST API]
-        WS[WebSocket]
+graph TB
+    subgraph APP ["🌐 Capa de Aplicación"]
+        direction LR
+        WEB([Interfaz Web])
+        API>REST API]
+        WS>WebSocket]
     end
     
-    subgraph SERVICES["Capa de Servicios"]
-        CONTROL[Control PID]
-        ALARM[Sistema de Alarmas]
-        LOG[Data Logger]
-        CONFIG[Configuración]
+    subgraph SERVICES ["⚙️ Capa de Servicios"]
+        direction LR
+        CONTROL{{Control PID}}
+        ALARM{{Sistema de Alarmas}}
+        LOG[(Data Logger)]
+        CONFIG[(Configuración)]
     end
     
-    subgraph HAL["Capa de Abstracción de Hardware"]
+    subgraph HAL ["🔌 Capa de Abstracción de Hardware"]
+        direction LR
         SENSORS[Driver Sensores]
         ACTUATORS[Driver Actuadores]
         DISPLAY[Driver Display]
         NETWORK[Driver WiFi]
     end
     
-    subgraph HW["Hardware"]
-        ESP32[ESP32]
+    subgraph HW ["🔧 Hardware"]
+        direction LR
+        ESP32([ESP32])
         PERIPH[Periféricos]
     end
     
     APP --> SERVICES
     SERVICES --> HAL
     HAL --> HW
+    
+    classDef app fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef services fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef hal fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef hw fill:#e2e3e5,stroke:#6c757d,stroke-width:2px
+    
+    class WEB,API,WS app
+    class CONTROL,ALARM,LOG,CONFIG services
+    class SENSORS,ACTUATORS,DISPLAY,NETWORK hal
+    class ESP32,PERIPH hw
 ```
 
 ## Stack Tecnológico
@@ -219,30 +233,39 @@ public:
 
 ```mermaid
 sequenceDiagram
-    participant Main
-    participant Sensors
-    participant Control
-    participant Actuators
-    participant Network
-    participant Display
+    participant Main as 🎯 Main
+    participant Sensors as 📊 Sensors
+    participant Control as ⚙️ Control
+    participant Actuators as 🔧 Actuators
+    participant Network as 📡 Network
+    participant Display as 🖥️ Display
     
-    Main->>Sensors: init()
-    Main->>Control: init()
-    Main->>Actuators: init()
-    Main->>Network: init()
-    Main->>Display: init()
-    
-    loop Every 100ms
-        Main->>Sensors: update()
-        Sensors-->>Control: sensorData
-        Main->>Control: update()
-        Control-->>Actuators: commands
-        Main->>Actuators: apply()
+    rect rgb(240, 248, 255)
+        Note over Main,Display: Inicialización del Sistema
+        Main->>Sensors: init()
+        Main->>Control: init()
+        Main->>Actuators: init()
+        Main->>Network: init()
+        Main->>Display: init()
     end
     
-    loop Every 1s
-        Main->>Display: update()
-        Main->>Network: update()
+    rect rgb(255, 248, 220)
+        Note over Sensors,Actuators: Loop de Control (100ms)
+        loop Cada 100ms
+            Main->>Sensors: update()
+            Sensors-->>Control: sensorData
+            Main->>Control: update()
+            Control-->>Actuators: commands
+            Main->>Actuators: apply()
+        end
+    end
+    
+    rect rgb(220, 255, 220)
+        Note over Display,Network: Loop de UI/Red (1s)
+        loop Cada 1s
+            Main->>Display: update()
+            Main->>Network: update()
+        end
     end
 ```
 

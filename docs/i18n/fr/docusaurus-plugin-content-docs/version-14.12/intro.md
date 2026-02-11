@@ -69,40 +69,52 @@ Sécurité
 Architecture du système
 
 ```mermaid
-flowchart TB
-    subgraph Hardware
-        ESP32[ESP32 MCU]
-        SENSORS[Sensores]
-        ACTUATORS[Actuadores]
-        DISPLAY[Pantalla]
-        POWER[Fuente de Poder]
+graph TB
+    subgraph HW [🔧 Matériel]
+        direction TB
+        ESP32([ESP32 MCU])
+        DISPLAY[[Écran]]
+        POWER[(Alimentation)]
     end
     
-    subgraph Sensores
-        TEMP[Temperatura]
-        HUM[Humedad]
-        WEIGHT[Peso]
+    subgraph SENS [📊 Capteurs]
+        direction LR
+        TEMP[🌡️ Température]
+        HUM[💧 Humidité]
+        WEIGHT[⚖️ Poids]
     end
     
-    subgraph Actuadores
-        HEATER[Calefactor]
-        FAN[Ventilador]
-        HUMIDIFIER[Humidificador]
+    subgraph ACT [⚙️ Actionneurs]
+        direction LR
+        HEATER[🔥 Chauffage]
+        FAN[💨 Ventilateur]
+        HUMIDIFIER[💦 Humidificateur]
     end
     
-    subgraph Comunicación
-        WIFI[WiFi]
-        API[REST API]
-        WS[WebSocket]
+    subgraph COMM [📡 Communication]
+        direction LR
+        WIFI{{WiFi}}
+        API>REST API]
+        WS>WebSocket]
     end
     
-    SENSORS --> ESP32
-    ESP32 --> ACTUATORS
-    ESP32 --> DISPLAY
-    POWER --> ESP32
-    ESP32 --> WIFI
+    POWER -->|12V DC| ESP32
+    SENS -->|données| ESP32
+    ESP32 -->|contrôle| ACT
+    ESP32 -->|affichage| DISPLAY
+    ESP32 <-->|connexion| WIFI
     WIFI --> API
     WIFI --> WS
+    
+    classDef sensors fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef actuators fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef comm fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef core fill:#e2e3e5,stroke:#6c757d,stroke-width:2px
+    
+    class TEMP,HUM,WEIGHT sensors
+    class HEATER,FAN,HUMIDIFIER actuators
+    class WIFI,API,WS comm
+    class ESP32,DISPLAY,POWER core
 ```
 
 # # Caractéristiques techniques

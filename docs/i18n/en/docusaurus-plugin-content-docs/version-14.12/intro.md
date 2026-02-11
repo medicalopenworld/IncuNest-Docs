@@ -68,40 +68,52 @@ Reduce neonatal mortality by providing quality medical technology to communities
 ## System Architecture
 
 ```mermaid
-flowchart TB
-    subgraph Hardware
-        ESP32[ESP32 MCU]
-        SENSORS[Sensores]
-        ACTUATORS[Actuadores]
-        DISPLAY[Pantalla]
-        POWER[Fuente de Poder]
+graph TB
+    subgraph HW [🔧 Hardware]
+        direction TB
+        ESP32([ESP32 MCU])
+        DISPLAY[[Display]]
+        POWER[(Power Supply)]
     end
     
-    subgraph Sensores
-        TEMP[Temperatura]
-        HUM[Humedad]
-        WEIGHT[Peso]
+    subgraph SENS [📊 Sensors]
+        direction LR
+        TEMP[🌡️ Temperature]
+        HUM[💧 Humidity]
+        WEIGHT[⚖️ Weight]
     end
     
-    subgraph Actuadores
-        HEATER[Calefactor]
-        FAN[Ventilador]
-        HUMIDIFIER[Humidificador]
+    subgraph ACT [⚙️ Actuators]
+        direction LR
+        HEATER[🔥 Heater]
+        FAN[💨 Fan]
+        HUMIDIFIER[💦 Humidifier]
     end
     
-    subgraph Comunicación
-        WIFI[WiFi]
-        API[REST API]
-        WS[WebSocket]
+    subgraph COMM [📡 Communication]
+        direction LR
+        WIFI{{WiFi}}
+        API>REST API]
+        WS>WebSocket]
     end
     
-    SENSORS --> ESP32
-    ESP32 --> ACTUATORS
-    ESP32 --> DISPLAY
-    POWER --> ESP32
-    ESP32 --> WIFI
+    POWER -->|12V DC| ESP32
+    SENS -->|data| ESP32
+    ESP32 -->|control| ACT
+    ESP32 -->|display| DISPLAY
+    ESP32 <-->|connection| WIFI
     WIFI --> API
     WIFI --> WS
+    
+    classDef sensors fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef actuators fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef comm fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef core fill:#e2e3e5,stroke:#6c757d,stroke-width:2px
+    
+    class TEMP,HUM,WEIGHT sensors
+    class HEATER,FAN,HUMIDIFIER actuators
+    class WIFI,API,WS comm
+    class ESP32,DISPLAY,POWER core
 ```
 
 ## Technical Specifications

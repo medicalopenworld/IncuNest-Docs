@@ -16,20 +16,48 @@ keywords: [diseño, técnico, sistema, control]
 IncuNest utiliza un controlador **PID** (Proporcional-Integral-Derivativo) para mantener la temperatura estable.
 
 ```mermaid
-flowchart LR
-    SP[Setpoint] --> E((Error))
-    PV[Temperatura Actual] --> E
-    E --> P[Proporcional]
-    E --> I[Integral]
-    E --> D[Derivativo]
-    P --> SUM((Σ))
+graph LR
+    subgraph entrada [📥 Entrada]
+        SP([🎯 Setpoint])
+        PV([🌡️ Temp Actual])
+    end
+    
+    subgraph pid [⚙️ Controlador PID]
+        E((Error))
+        P[P - Proporcional]
+        I[I - Integral]
+        D[D - Derivativo]
+        SUM((Σ))
+    end
+    
+    subgraph salida [📤 Salida]
+        OUT>Salida PWM]
+        HEATER[[🔥 Calefactor]]
+        PROCESS[(Proceso Térmico)]
+        SENSOR[📊 Sensor]
+    end
+    
+    SP --> E
+    PV --> E
+    E --> P
+    E --> I
+    E --> D
+    P --> SUM
     I --> SUM
     D --> SUM
-    SUM --> OUT[Salida PWM]
-    OUT --> HEATER[Calefactor]
-    HEATER --> PROCESS[Proceso Térmico]
-    PROCESS --> SENSOR[Sensor]
+    SUM --> OUT
+    OUT --> HEATER
+    HEATER --> PROCESS
+    PROCESS --> SENSOR
     SENSOR --> PV
+    
+    classDef input fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef controller fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef output fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    
+    class SP,PV input
+    class E,P,I,D,SUM controller
+    class OUT,HEATER,PROCESS,SENSOR output
 ```
 
 ### Ecuación del Controlador
@@ -108,22 +136,25 @@ Parámetros recomendados según el método de Ziegler-Nichols:
 ### Arquitectura de Sensores
 
 ```mermaid
-flowchart TB
-    subgraph Sensores
-        DHT22[DHT22<br/>Temp + Hum]
-        SHT31[SHT31<br/>Temp + Hum]
-        DS18B20[DS18B20<br/>Temp Piel]
+graph TB
+    subgraph Sensores [📊 Sensores de Entrada]
+        direction LR
+        DHT22[DHT22<br/>🌡️ Temp + 💧 Hum]
+        SHT31[SHT31<br/>🌡️ Temp + 💧 Hum]
+        DS18B20[DS18B20<br/>🌡️ Temp Piel]
     end
     
-    subgraph Procesamiento
-        FILTER[Filtro Digital]
-        CALIB[Calibración]
-        VALID[Validación]
+    subgraph Procesamiento [⚙️ Procesamiento de Señales]
+        direction LR
+        FILTER{{Filtro Digital}}
+        CALIB[(Calibración)]
+        VALID{Validación}
     end
     
-    subgraph Salida
-        AVG[Promedio Ponderado]
-        ALARM[Sistema de Alarmas]
+    subgraph Salida [📤 Salida]
+        direction LR
+        AVG([Promedio Ponderado])
+        ALARM[[🚨 Sistema de Alarmas]]
     end
     
     DHT22 --> FILTER
@@ -134,6 +165,14 @@ flowchart TB
     CALIB --> VALID
     VALID --> AVG
     VALID --> ALARM
+    
+    classDef sensors fill:#d4edda,stroke:#28a745,stroke-width:2px
+    classDef processing fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef output fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    
+    class DHT22,SHT31,DS18B20 sensors
+    class FILTER,CALIB,VALID processing
+    class AVG,ALARM output
 ```
 
 ### Filtrado de Señales
@@ -186,25 +225,35 @@ float applyCalibration(float raw, CalibrationData& cal) {
 ### Niveles de Alarma
 
 ```mermaid
-flowchart TD
-    subgraph Niveles
-        L1[Nivel 1: INFO]
-        L2[Nivel 2: WARNING]
-        L3[Nivel 3: ALARM]
-        L4[Nivel 4: CRITICAL]
+graph TB
+    subgraph Niveles [🎚️ Niveles de Alarma]
+        L1[ℹ️ Nivel 1: INFO]
+        L2[⚠️ Nivel 2: WARNING]
+        L3[🚨 Nivel 3: ALARM]
+        L4[🛑 Nivel 4: CRITICAL]
     end
     
-    subgraph Acciones
-        A1[LED Azul]
-        A2[LED Amarillo + Beep]
-        A3[LED Rojo + Alarma Sonora]
-        A4[Apagado + Alarma Continua]
+    subgraph Acciones [📢 Acciones de Respuesta]
+        A1[🔵 LED Azul]
+        A2[🟡 LED Amarillo + Beep]
+        A3[🔴 LED Rojo + Alarma Sonora]
+        A4[⛔ Apagado + Alarma Continua]
     end
     
     L1 --> A1
     L2 --> A2
     L3 --> A3
     L4 --> A4
+    
+    classDef info fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef warning fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef alarm fill:#f8d7da,stroke:#dc3545,stroke-width:2px
+    classDef critical fill:#dc3545,stroke:#721c24,stroke-width:2px,color:#fff
+    
+    class L1,A1 info
+    class L2,A2 warning
+    class L3,A3 alarm
+    class L4,A4 critical
 ```
 
 ### Condiciones de Alarma
@@ -276,11 +325,16 @@ public:
 
 ```mermaid
 stateDiagram-v2
-    [*] --> ACTIVE: Power On
-    ACTIVE --> LOW_POWER: Sin actividad (5 min)
-    LOW_POWER --> ACTIVE: Actividad detectada
-    ACTIVE --> EMERGENCY: Falla de energía
-    EMERGENCY --> ACTIVE: Energía restaurada
+    [*] --> ACTIVE: ⚡ Power On
+    
+    state "💚 Activo" as ACTIVE
+    state "😴 Bajo Consumo" as LOW_POWER
+    state "🚨 Emergencia" as EMERGENCY
+    
+    ACTIVE --> LOW_POWER: ⏰ Sin actividad (5 min)
+    LOW_POWER --> ACTIVE: 👆 Actividad detectada
+    ACTIVE --> EMERGENCY: ⚡ Falla de energía
+    EMERGENCY --> ACTIVE: ✅ Energía restaurada
 ```
 
 ### Consumo por Componente
@@ -297,21 +351,37 @@ stateDiagram-v2
 
 Diseño recomendado para respaldo de energía:
 
-```
-┌─────────────────────────────────────────────┐
-│                                             │
-│    AC ──► Rectificador ──► Cargador         │
-│                              │              │
-│                              ▼              │
-│                          Batería            │
-│                              │              │
-│                              ▼              │
-│    DC 12V ◄── Convertidor ◄──┘              │
-│       │                                     │
-│       ▼                                     │
-│    Sistema IncuNest                         │
-│                                             │
-└─────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph entrada [🔌 Entrada AC]
+        AC[AC 110-220V]
+    end
+    
+    subgraph conversion [⚡ Conversión]
+        RECT{{Rectificador}}
+        CHARGER[(Cargador)]
+        BATTERY[(🔋 Batería)]
+        CONV{{Convertidor}}
+    end
+    
+    subgraph salida [📤 Salida]
+        DC12[DC 12V]
+        SYSTEM([🏥 Sistema IncuNest])
+    end
+    
+    AC --> RECT --> CHARGER
+    CHARGER --> BATTERY
+    BATTERY --> CONV
+    CONV --> DC12
+    DC12 --> SYSTEM
+    
+    classDef input fill:#ffcccc,stroke:#dc3545,stroke-width:2px
+    classDef conversion fill:#cce5ff,stroke:#007bff,stroke-width:2px
+    classDef output fill:#d4edda,stroke:#28a745,stroke-width:2px
+    
+    class AC input
+    class RECT,CHARGER,BATTERY,CONV conversion
+    class DC12,SYSTEM output
 ```
 
 ## Próximos Documentos
